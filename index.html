@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Houston Toner Supply | Printer Supplies & Solutions</title>
+
+  <title>Houston Toner Supply | Toner, Ink, Printers & Office Supplies</title>
+
+  <meta name="description" content="Houston Toner Supply provides toner, ink, printers, printer parts, accessories and office supplies in Houston and across the USA.">
 
   <style>
     * {
@@ -12,15 +15,20 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: #172033;
-      background: #f6f8fb;
+      background: #f5f7fb;
       line-height: 1.6;
     }
 
+    /* HEADER */
     header {
-      background: #0b1f3a;
+      background: rgba(5, 18, 38, 0.97);
       color: white;
       padding: 18px 6%;
       display: flex;
@@ -28,16 +36,18 @@
       justify-content: space-between;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
     }
 
     .logo {
       font-size: 24px;
       font-weight: 800;
+      letter-spacing: -0.5px;
     }
 
     .logo span {
-      color: #4da3ff;
+      color: #45a8ff;
     }
 
     nav a {
@@ -45,46 +55,90 @@
       text-decoration: none;
       margin-left: 25px;
       font-weight: 600;
+      transition: 0.2s;
     }
 
     nav a:hover {
-      color: #4da3ff;
+      color: #45a8ff;
     }
 
+    /* HERO */
     .hero {
-      background: linear-gradient(135deg, #0b1f3a, #174a7c);
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      position: relative;
       color: white;
-      padding: 90px 6%;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(3, 15, 32, 0.92) 0%,
+          rgba(3, 15, 32, 0.72) 45%,
+          rgba(3, 15, 32, 0.45) 100%
+        ),
+        url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Downtown%20Houston%20Skyline%20Night.JPG")
+        center center / cover no-repeat;
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 850px;
+      padding: 90px 6%;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(69, 168, 255, 0.18);
+      border: 1px solid rgba(69, 168, 255, 0.55);
+      color: #8dccff;
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-weight: 700;
+      margin-bottom: 22px;
+      font-size: 14px;
     }
 
     .hero h1 {
-      font-size: 52px;
-      line-height: 1.1;
+      font-size: 58px;
+      line-height: 1.08;
       margin-bottom: 22px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span {
+      color: #52b3ff;
     }
 
     .hero p {
       font-size: 20px;
       color: #e5edf7;
-      margin-bottom: 30px;
+      max-width: 700px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .buttons a {
       display: inline-block;
-      padding: 14px 24px;
+      padding: 15px 25px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 700;
-      margin-right: 10px;
+      transition: 0.2s;
     }
 
     .primary {
-      background: white;
-      color: #0b1f3a;
+      background: #1689e8;
+      color: white;
+    }
+
+    .primary:hover {
+      background: #0874c9;
+      transform: translateY(-2px);
     }
 
     .secondary {
@@ -92,161 +146,182 @@
       color: white;
     }
 
+    .secondary:hover {
+      background: white;
+      color: #0b1f3a;
+    }
+
+    /* GENERAL SECTIONS */
     section {
-      padding: 70px 6%;
+      padding: 80px 6%;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 40px;
+      max-width: 750px;
+      margin: 0 auto 45px;
     }
 
     .section-title h2 {
-      font-size: 34px;
+      font-size: 36px;
       color: #0b1f3a;
       margin-bottom: 10px;
     }
 
     .section-title p {
       color: #667085;
+      font-size: 17px;
     }
 
+    /* CATEGORIES */
     .categories {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 22px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .category {
       background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      padding: 32px 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(15, 35, 60, 0.07);
       text-align: center;
+      border: 1px solid #e8edf3;
+      transition: 0.25s;
+    }
+
+    .category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(15, 35, 60, 0.12);
+    }
+
+    .category-icon {
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: #e9f5ff;
+      font-size: 27px;
     }
 
     .category h3 {
       color: #0b1f3a;
       margin-bottom: 8px;
+      font-size: 20px;
     }
 
     .category p {
       color: #667085;
     }
 
+    /* PRODUCTS */
     .products {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .product {
       background: white;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(15, 35, 60, 0.08);
+      border: 1px solid #e8edf3;
+      transition: 0.25s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
     }
 
     .product-image {
-      height: 180px;
-      background: #eef3f8;
-      border-radius: 8px;
+      height: 210px;
+      background:
+        linear-gradient(135deg, #eaf4fc, #dceaf6);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #667085;
-      margin-bottom: 20px;
-      font-weight: 600;
+      color: #52708e;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .product-content {
+      padding: 25px;
     }
 
     .product h3 {
       margin-bottom: 8px;
       color: #0b1f3a;
+      font-size: 21px;
     }
 
     .product p {
       color: #667085;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
     }
 
-    .price {
-      font-size: 20px;
-      font-weight: 800;
-      color: #174a7c;
-      margin-bottom: 15px;
-    }
-
-    .product button {
-      width: 100%;
+    .product-button {
+      display: block;
+      text-align: center;
       padding: 12px;
-      border: 0;
-      border-radius: 7px;
       background: #0b1f3a;
       color: white;
+      text-decoration: none;
+      border-radius: 7px;
       font-weight: 700;
-      cursor: pointer;
     }
 
+    .product-button:hover {
+      background: #1689e8;
+    }
+
+    /* SERVICES */
     .services {
-      background: #eef3f8;
+      background: #edf4fa;
     }
 
     .service-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .service {
       background: white;
-      padding: 30px;
-      border-radius: 12px;
+      padding: 32px;
+      border-radius: 14px;
+      border: 1px solid #e2eaf2;
+      box-shadow: 0 7px 25px rgba(15,35,60,0.06);
+    }
+
+    .service-number {
+      color: #1689e8;
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 10px;
     }
 
     .service h3 {
       color: #0b1f3a;
       margin-bottom: 10px;
+      font-size: 21px;
     }
 
-    .quote {
-      background: white;
+    .service p {
+      color: #667085;
     }
 
-    .quote-box {
-      max-width: 700px;
-      margin: auto;
-      background: #f6f8fb;
-      padding: 35px;
-      border-radius: 12px;
-    }
-
-    form {
-      display: grid;
-      gap: 15px;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #ccd3dd;
-      border-radius: 7px;
-      font-size: 15px;
-    }
-
-    textarea {
-      min-height: 120px;
-    }
-
-    form button {
-      padding: 14px;
-      background: #0b1f3a;
-      color: white;
-      border: 0;
-      border-radius: 7px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
+    /* ABOUT */
     .about {
       background: #0b1f3a;
       color: white;
@@ -254,48 +329,228 @@
     }
 
     .about h2 {
-      font-size: 34px;
-      margin-bottom: 15px;
+      font-size: 38px;
+      margin-bottom: 18px;
     }
 
     .about p {
-      max-width: 750px;
+      max-width: 800px;
       margin: auto;
       color: #dbe5f0;
+      font-size: 18px;
     }
 
-    footer {
-      background: #071426;
-      color: #dbe5f0;
+    .about-buttons {
+      margin-top: 28px;
+    }
+
+    .about-buttons a {
+      display: inline-block;
+      background: #1689e8;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* QUOTE */
+    .quote {
+      background: white;
+    }
+
+    .quote-box {
+      max-width: 760px;
+      margin: auto;
+      background: #f6f8fb;
+      padding: 38px;
+      border-radius: 15px;
+      border: 1px solid #e3e9f0;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccd3dd;
+      border-radius: 7px;
+      font-size: 15px;
+      font-family: inherit;
+      background: white;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: #1689e8;
+      box-shadow: 0 0 0 3px rgba(22,137,232,0.12);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    form button {
+      padding: 15px;
+      background: #1689e8;
+      color: white;
+      border: 0;
+      border-radius: 7px;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #0874c9;
+    }
+
+    /* CONTACT STRIP */
+    .contact-strip {
+      background: #e8f3fb;
       padding: 35px 6%;
     }
 
+    .contact-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .contact-item h3 {
+      color: #0b1f3a;
+      margin-bottom: 5px;
+    }
+
+    .contact-item a {
+      color: #1689e8;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .contact-item p {
+      color: #667085;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #071426;
+      color: #dbe5f0;
+      padding: 40px 6%;
+    }
+
     .footer-grid {
+      max-width: 1200px;
+      margin: auto;
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
-      gap: 30px;
+      gap: 35px;
     }
 
     footer h3 {
       color: white;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     footer p {
-      margin-bottom: 6px;
+      margin-bottom: 7px;
+    }
+
+    footer a {
+      color: #75c4ff;
+      text-decoration: none;
     }
 
     .copyright {
       text-align: center;
-      margin-top: 30px;
-      padding-top: 20px;
+      margin-top: 35px;
+      padding-top: 22px;
       border-top: 1px solid #24344b;
       font-size: 14px;
+      color: #9eacbd;
     }
 
-    @media (max-width: 800px) {
+    .photo-credit {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 12px;
+      color: #718096;
+    }
+
+    .photo-credit a {
+      color: #8ebde0;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .categories,
+      .products,
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 16px 4%;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 5px;
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      .hero-content {
+        padding: 70px 5%;
+      }
+
       .hero h1 {
         font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 60px 5%;
       }
 
       .categories,
@@ -305,13 +560,17 @@
         grid-template-columns: 1fr;
       }
 
-      header {
-        flex-direction: column;
-        gap: 12px;
+      .section-title h2 {
+        font-size: 30px;
       }
 
-      nav a {
-        margin: 0 8px;
+      .quote-box {
+        padding: 25px 18px;
+      }
+
+      .buttons a {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
@@ -320,182 +579,348 @@
 <body>
 
 <header>
-  <div class="logo">Houston <span>Toner Supply</span></div>
+  <div class="logo">
+    Houston <span>Toner Supply</span>
+  </div>
 
   <nav>
     <a href="#products">Products</a>
     <a href="#services">Services</a>
-    <a href="#quote">Request a Quote</a>
+    <a href="#quote">Quote</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
+
   <div class="hero-content">
-    <h1>Reliable Printer Supplies for Your Business.</h1>
+
+    <div class="hero-badge">
+      HOUSTON • TEXAS
+    </div>
+
+    <h1>
+      Printer Supplies Built for <span>Business.</span>
+    </h1>
 
     <p>
-      Toner, ink, printers, parts and office supplies from a
-      Houston-based supplier you can count on.
+      Toner, ink, printers, parts and office supplies
+      for businesses in Houston and customers across the USA.
     </p>
 
     <div class="buttons">
-      <a class="primary" href="#products">Shop Products</a>
-      <a class="secondary" href="#quote">Request a Quote</a>
+      <a class="primary" href="#products">
+        Explore Products
+      </a>
+
+      <a class="secondary" href="#quote">
+        Request a Quote
+      </a>
+
+      <a class="secondary" href="tel:+13462873776">
+        📞 Call Now
+      </a>
     </div>
+
   </div>
+
 </section>
 
+<!-- PRODUCTS / CATEGORIES -->
 <section>
+
   <div class="section-title">
-    <h2>What We Supply</h2>
-    <p>Everything you need to keep your office printing.</p>
+    <h2>Everything Your Printer Needs</h2>
+
+    <p>
+      Reliable supplies and equipment for offices,
+      businesses and everyday printing needs.
+    </p>
   </div>
 
   <div class="categories">
 
     <div class="category">
+      <div class="category-icon">🖨️</div>
       <h3>Toner Cartridges</h3>
-      <p>OEM, compatible and remanufactured toner options.</p>
+      <p>
+        OEM, compatible and remanufactured toner options.
+      </p>
     </div>
 
     <div class="category">
+      <div class="category-icon">🖋️</div>
       <h3>Ink Cartridges</h3>
-      <p>Reliable ink solutions for home and business printers.</p>
+      <p>
+        Reliable ink solutions for home and business printers.
+      </p>
     </div>
 
     <div class="category">
+      <div class="category-icon">💻</div>
       <h3>Printers</h3>
-      <p>Laser printers, business printers and used equipment.</p>
+      <p>
+        Business laser printers and used equipment.
+      </p>
     </div>
 
     <div class="category">
+      <div class="category-icon">⚙️</div>
       <h3>Printer Parts</h3>
-      <p>Fusers, drums and replacement printer components.</p>
+      <p>
+        Fusers, drums and replacement components.
+      </p>
     </div>
 
     <div class="category">
+      <div class="category-icon">📦</div>
       <h3>Accessories</h3>
-      <p>Printer accessories and essential office supplies.</p>
+      <p>
+        Printer accessories and essential office supplies.
+      </p>
     </div>
 
     <div class="category">
+      <div class="category-icon">🏢</div>
       <h3>Bulk Orders</h3>
-      <p>Special pricing for businesses and larger orders.</p>
+      <p>
+        Competitive pricing for businesses and larger orders.
+      </p>
     </div>
 
   </div>
+
 </section>
 
+<!-- FEATURED PRODUCTS -->
 <section id="products">
+
   <div class="section-title">
+
     <h2>Featured Products</h2>
-    <p>Popular printer supplies from Houston Toner Supply.</p>
+
+    <p>
+      Need something specific? Contact us for availability
+      and business pricing.
+    </p>
+
   </div>
 
   <div class="products">
 
     <div class="product">
-      <div class="product-image">Toner Cartridge</div>
-      <h3>Business Toner Cartridge</h3>
-      <p>High-quality toner for everyday business printing.</p>
-      <div class="price">Request Pricing</div>
-      <button onclick="alert('Product catalog coming soon.')">
-        View Product
-      </button>
+
+      <div class="product-image">
+        🖨️ Toner Cartridge
+      </div>
+
+      <div class="product-content">
+
+        <h3>Business Toner Cartridge</h3>
+
+        <p>
+          High-quality toner options for everyday
+          business printing.
+        </p>
+
+        <a class="product-button" href="#quote">
+          Request Pricing
+        </a>
+
+      </div>
+
     </div>
 
     <div class="product">
-      <div class="product-image">Laser Printer</div>
-      <h3>Business Laser Printer</h3>
-      <p>Reliable printing equipment for offices and businesses.</p>
-      <div class="price">Request Pricing</div>
-      <button onclick="alert('Product catalog coming soon.')">
-        View Product
-      </button>
+
+      <div class="product-image">
+        🖨️ Laser Printer
+      </div>
+
+      <div class="product-content">
+
+        <h3>Business Laser Printers</h3>
+
+        <p>
+          Reliable printing equipment for offices
+          and businesses.
+        </p>
+
+        <a class="product-button" href="#quote">
+          Request Pricing
+        </a>
+
+      </div>
+
     </div>
 
     <div class="product">
-      <div class="product-image">Printer Parts</div>
-      <h3>Printer Parts & Fusers</h3>
-      <p>Replacement parts to keep your printer running.</p>
-      <div class="price">Request Pricing</div>
-      <button onclick="alert('Product catalog coming soon.')">
-        View Product
-      </button>
+
+      <div class="product-image">
+        ⚙️ Printer Parts
+      </div>
+
+      <div class="product-content">
+
+        <h3>Printer Parts & Fusers</h3>
+
+        <p>
+          Replacement parts to help keep your
+          printer running.
+        </p>
+
+        <a class="product-button" href="#quote">
+          Request Pricing
+        </a>
+
+      </div>
+
     </div>
 
   </div>
+
 </section>
 
+<!-- SERVICES -->
 <section id="services" class="services">
 
   <div class="section-title">
+
     <h2>Why Choose Houston Toner Supply?</h2>
-    <p>Local service with nationwide reach.</p>
+
+    <p>
+      Local service with the ability to serve customers
+      across the United States.
+    </p>
+
   </div>
 
   <div class="service-grid">
 
     <div class="service">
+
+      <div class="service-number">01</div>
+
       <h3>Houston Delivery</h3>
+
       <p>
-        Convenient delivery options for businesses throughout
-        the Houston area.
+        Convenient delivery options for businesses
+        throughout the Houston area.
       </p>
+
     </div>
 
     <div class="service">
+
+      <div class="service-number">02</div>
+
       <h3>USA Shipping</h3>
+
       <p>
-        We ship printer supplies and equipment throughout
-        the United States.
+        Printer supplies and equipment can be shipped
+        throughout the United States.
       </p>
+
     </div>
 
     <div class="service">
+
+      <div class="service-number">03</div>
+
       <h3>Business Pricing</h3>
+
       <p>
-        Contact us for bulk orders, recurring supplies and
-        competitive business pricing.
+        Ask us about bulk orders, recurring supplies
+        and competitive business pricing.
       </p>
+
     </div>
 
   </div>
 
 </section>
 
+<!-- ABOUT -->
+<section class="about">
+
+  <h2>Houston Toner Supply</h2>
+
+  <p>
+    We provide toner, ink, printers, printer parts,
+    accessories and office supplies for businesses
+    and customers in Houston and across the USA.
+  </p>
+
+  <div class="about-buttons">
+
+    <a href="#quote">
+      Talk to Us About Your Needs
+    </a>
+
+  </div>
+
+</section>
+
+<!-- QUOTE -->
 <section id="quote" class="quote">
 
   <div class="section-title">
+
     <h2>Request a Quote</h2>
-    <p>Tell us what you need and we'll help you find the right solution.</p>
+
+    <p>
+      Tell us what you need and we'll help you find
+      the right solution.
+    </p>
+
   </div>
 
   <div class="quote-box">
 
     <form onsubmit="submitQuote(event)">
 
-      <input type="text" placeholder="Your Name" required>
+      <input
+        type="text"
+        placeholder="Your Name"
+        required
+      >
 
-      <input type="email" placeholder="Business Email" required>
+      <input
+        type="email"
+        placeholder="Business Email"
+        required
+      >
 
-      <input type="tel" placeholder="Phone Number">
+      <input
+        type="tel"
+        placeholder="Phone Number"
+      >
 
       <select required>
-        <option value="">What are you looking for?</option>
+
+        <option value="">
+          What are you looking for?
+        </option>
+
         <option>Toner Cartridges</option>
         <option>Ink Cartridges</option>
         <option>Printers</option>
         <option>Used Printers</option>
         <option>Printer Parts</option>
+        <option>Accessories</option>
         <option>Office Supplies</option>
         <option>Bulk Order</option>
+
       </select>
 
-      <textarea placeholder="Tell us what you need..."></textarea>
+      <textarea
+        placeholder="Tell us what you need, including printer model or part number if available..."
+      ></textarea>
 
-      <button type="submit">Submit Quote Request</button>
+      <button type="submit">
+        Submit Quote Request
+      </button>
 
     </form>
 
@@ -503,38 +928,109 @@
 
 </section>
 
-<section class="about">
+<!-- CONTACT -->
+<div class="contact-strip" id="contact">
 
-  <h2>Houston Toner Supply</h2>
+  <div class="contact-grid">
 
-  <p>
-    Houston Toner Supply provides toner, ink, printers,
-    printer parts, accessories and office supplies to
-    businesses and customers in Houston and across the USA.
-  </p>
+    <div class="contact-item">
 
-</section>
+      <h3>📞 Call Us</h3>
 
-<footer id="contact">
+      <a href="tel:+13462873776">
+        +1 346-287-3776
+      </a>
+
+    </div>
+
+    <div class="contact-item">
+
+      <h3>✉️ Email Us</h3>
+
+      <a href="mailto:houstontonersupply@gmail.com">
+        houstontonersupply@gmail.com
+      </a>
+
+    </div>
+
+    <div class="contact-item">
+
+      <h3>📍 Houston, Texas</h3>
+
+      <p>
+        10919 Stancliff Rd<br>
+        Houston, TX 77099
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
 
   <div class="footer-grid">
 
     <div>
+
       <h3>Houston Toner Supply</h3>
-      <p>Printer Supplies & Solutions</p>
-      <p>Houston, Texas</p>
+
+      <p>
+        Printer Supplies & Solutions
+      </p>
+
+      <p>
+        Toner • Ink • Printers • Parts • Accessories
+      </p>
+
+      <p>
+        Houston, Texas
+      </p>
+
     </div>
 
     <div>
+
+      <h3>Quick Links</h3>
+
+      <p>
+        <a href="#products">Products</a>
+      </p>
+
+      <p>
+        <a href="#services">Services</a>
+      </p>
+
+      <p>
+        <a href="#quote">Request a Quote</a>
+      </p>
+
+      <p>
+        <a href="#contact">Contact</a>
+      </p>
+
+    </div>
+
+    <div>
+
       <h3>Contact</h3>
-      <p>📞 +1 346-287-3776</p>
-      <p>✉️ houstontonersupply@gmail.com</p>
-    </div>
 
-    <div>
-      <h3>Address</h3>
-      <p>10919 Stancliff Rd</p>
-      <p>Houston, TX 77099</p>
+      <p>
+        📞
+        <a href="tel:+13462873776">
+          346-287-3776
+        </a>
+      </p>
+
+      <p>
+        ✉️
+        <a href="mailto:houstontonersupply@gmail.com">
+          Email Us
+        </a>
+      </p>
+
     </div>
 
   </div>
@@ -543,17 +1039,30 @@
     © 2026 Houston Toner Supply. All rights reserved.
   </div>
 
+  <div class="photo-credit">
+    Downtown Houston skyline photo by Bobby L. Warren /
+    Wikimedia Commons, used under
+    <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">
+      CC BY-SA 3.0
+    </a>.
+  </div>
+
 </footer>
 
 <script>
+
   function submitQuote(event) {
+
     event.preventDefault();
 
     alert(
       "Thank you! Your quote request has been received. " +
-      "Our team will contact you soon."
+      "Please call 346-287-3776 or email houstontonersupply@gmail.com " +
+      "to complete your request."
     );
+
   }
+
 </script>
 
 </body>
