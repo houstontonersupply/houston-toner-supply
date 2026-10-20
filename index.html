@@ -1055,6 +1055,7 @@
 <script>
 
   
+
 function submitQuote(event) {
   event.preventDefault();
 
@@ -1074,10 +1075,13 @@ function submitQuote(event) {
     "\n\nThank you."
   );
 
-  window.location.href =
-    "mailto:houstontonersupply@gmail.com" +
-    "?subject=" + subject +
+  const gmailUrl =
+    "https://mail.google.com/mail/?view=cm&fs=1" +
+    "&to=houstontonersupply@gmail.com" +
+    "&su=" + subject +
     "&body=" + body;
+
+  window.open(gmailUrl, "_blank");
 }
 
 </script>
