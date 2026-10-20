@@ -878,27 +878,29 @@
 
   <div class="quote-box">
 
-    <form onsubmit="submitQuote(event)">
+<form onsubmit="submitQuote(event)">
+     <input
+  type="text"
+  name="Customer Name"
+  placeholder="Your Name"
+  required
+>
+  
+      <input
+  type="email"
+  name="Business Email"
+  placeholder="Business Email"
+  required
+>
 
       <input
-        type="text"
-        placeholder="Your Name"
-        required
-      >
+  type="tel"
+  name="Phone Number"
+  placeholder="Phone Number"
+  required
+>
 
-      <input
-        type="email"
-        placeholder="Business Email"
-        required
-      >
-
-      <input
-        type="tel"
-        placeholder="Phone Number"
-      >
-
-      <select required>
-
+<select name="Product Category" required>
         <option value="">
           What are you looking for?
         </option>
@@ -914,10 +916,11 @@
 
       </select>
 
-      <textarea
-        placeholder="Tell us what you need, including printer model or part number if available..."
-      ></textarea>
-
+<textarea
+  name="Product Details"
+  placeholder="Tell us what you need, including printer model or part number if available..."
+  required
+></textarea>
       <button type="submit">
         Submit Quote Request
       </button>
@@ -1051,17 +1054,31 @@
 
 <script>
 
-  function submitQuote(event) {
+  
+function submitQuote(event) {
+  event.preventDefault();
 
-    event.preventDefault();
+  const form = event.target;
+  const formData = new FormData(form);
+  const fields = [];
 
-    alert(
-      "Your email app will open so you can send your quote request." +
-      "Please call 346-287-3776 or email houstontonersupply@gmail.com " +
-      "to complete your request."
-    );
-
+  for (const [name, value] of formData.entries()) {
+    fields.push(name + ": " + value);
   }
+
+  const subject = encodeURIComponent("Website Quote Request");
+  const body = encodeURIComponent(
+    "Hello Houston Toner Supply,\n\n" +
+    "I would like to request a quote:\n\n" +
+    fields.join("\n") +
+    "\n\nThank you."
+  );
+
+  window.location.href =
+    "mailto:houstontonersupply@gmail.com" +
+    "?subject=" + subject +
+    "&body=" + body;
+}
 
 </script>
 
