@@ -715,58 +715,42 @@ select {
   margin-top: auto;
 }
     
-/* PREMIUM BRAND LOGO CAROUSEL */
+
+/* PREMIUM STATIC BRAND GRID */
 .brands-section {
-  overflow: hidden;
   background: linear-gradient(180deg, #ffffff 0%, #f3f7fc 100%);
 }
 
 .brand-carousel {
-  position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
   padding: 12px 0 22px;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    #000 5%,
-    #000 95%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    #000 5%,
-    #000 95%,
-    transparent
-  );
 }
 
 .brand-track {
-  display: flex;
-  width: max-content;
-  gap: 22px;
-  animation: brand-scroll 28s linear infinite;
-}
-
-.brand-carousel:hover .brand-track,
-.brand-carousel:focus-within .brand-track {
-  animation-play-state: paused;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
 }
 
 .brand-card {
-  flex: 0 0 190px;
-  height: 112px;
+  min-width: 0;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 22px;
+  padding: 24px;
   background: #ffffff;
   border: 1px solid #e4ebf3;
   border-radius: 14px;
   box-shadow: 0 6px 22px rgba(11, 31, 58, 0.06);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hide the duplicate logos used by the old carousel */
+.brand-card[aria-hidden="true"] {
+  display: none;
 }
 
 .brand-card:hover {
@@ -777,8 +761,8 @@ select {
 .brand-card img {
   display: block;
   width: 100%;
-  max-width: 145px;
-  height: 58px;
+  max-width: 150px;
+  height: 62px;
   object-fit: contain;
 }
 
@@ -789,41 +773,25 @@ select {
   font-size: 13px;
 }
 
-@keyframes brand-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
+@media (max-width: 900px) {
+  .brand-track {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 650px) {
+  .brand-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
   .brand-card {
-    flex-basis: 155px;
-    height: 92px;
-    padding: 16px;
+    height: 100px;
+    padding: 18px;
   }
 
   .brand-card img {
-    height: 48px;
-  }
-
-  .brand-track {
-    gap: 14px;
-    animation-duration: 22s;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .brand-track {
-    animation: none;
-  }
-
-  .brand-carousel {
-    overflow-x: auto;
-    -webkit-mask-image: none;
-    mask-image: none;
+    height: 54px;
   }
 }
 
@@ -984,11 +952,11 @@ select {
       </div>
 
       <div class="brand-card">
-        <img src="brother-logo.svg" alt="Brother" loading="eager">
+        <img src="Brother-logo.svg" alt="Brother" loading="eager">
       </div>
 
       <div class="brand-card">
-        <img src="epson-logo.svg" alt="Epson" loading="eager">
+        <img src="Epson-logo.svg" alt="Epson" loading="eager">
       </div>
 
       <div class="brand-card">
@@ -996,7 +964,7 @@ select {
       </div>
 
       <div class="brand-card">
-        <img src="lexmark-logo.svg" alt="Lexmark" loading="eager">
+        <img src="Lexmark-logo.svg" alt="Lexmark" loading="eager">
       </div>
 
       <!-- Duplicate set for seamless scrolling -->
