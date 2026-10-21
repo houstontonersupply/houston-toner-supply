@@ -714,6 +714,119 @@ select {
 .product-button {
   margin-top: auto;
 }
+    
+/* PREMIUM BRAND LOGO CAROUSEL */
+.brands-section {
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f7fc 100%);
+}
+
+.brand-carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 12px 0 22px;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
+}
+
+.brand-track {
+  display: flex;
+  width: max-content;
+  gap: 22px;
+  animation: brand-scroll 28s linear infinite;
+}
+
+.brand-carousel:hover .brand-track,
+.brand-carousel:focus-within .brand-track {
+  animation-play-state: paused;
+}
+
+.brand-card {
+  flex: 0 0 190px;
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e4ebf3;
+  border-radius: 14px;
+  box-shadow: 0 6px 22px rgba(11, 31, 58, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(11, 31, 58, 0.12);
+}
+
+.brand-card img {
+  display: block;
+  width: 100%;
+  max-width: 145px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.brand-note {
+  text-align: center;
+  margin-top: 12px;
+  color: #667085;
+  font-size: 13px;
+}
+
+@keyframes brand-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 650px) {
+  .brand-card {
+    flex-basis: 155px;
+    height: 92px;
+    padding: 16px;
+  }
+
+  .brand-card img {
+    height: 48px;
+  }
+
+  .brand-track {
+    gap: 14px;
+    animation-duration: 22s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-track {
+    animation: none;
+  }
+
+  .brand-carousel {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
   </style>
 </head>
 
@@ -843,69 +956,92 @@ select {
 
 </section>
 
+
 <!-- BRANDS WE CAN SOURCE -->
-<section id="brands">
+<section id="brands" class="brands-section">
 
   <div class="section-title">
     <h2>Brands We Can Help Source</h2>
     <p>
-      Looking for supplies for a specific printer or copier?
+      Looking for toner, ink, printers, or replacement parts?
       Tell us the brand and model, and we'll check availability.
     </p>
   </div>
 
-  <div class="products">
+  <div class="brand-carousel"
+       role="region"
+       aria-label="Printer brands we can help source">
 
-    <div class="product">
-      <div class="product-content">
-        <h3>HP</h3>
-        <p>Toner, ink, printers, and replacement parts.</p>
+    <div class="brand-track">
+
+      <!-- First set of logos -->
+      <div class="brand-card">
+        <img src="hp-logo.svg" alt="HP" loading="eager">
       </div>
-    </div>
 
-    <div class="product">
-      <div class="product-content">
-        <h3>Canon</h3>
-        <p>Printer supplies, copier supplies, and parts.</p>
+      <div class="brand-card">
+        <img src="canon-logo.svg" alt="Canon" loading="eager">
       </div>
-    </div>
 
-    <div class="product">
-      <div class="product-content">
-        <h3>Brother</h3>
-        <p>Toner, ink, drums, and printer accessories.</p>
+      <div class="brand-card">
+        <img src="brother-logo.svg" alt="Brother" loading="eager">
       </div>
-    </div>
 
-    <div class="product">
-      <div class="product-content">
-        <h3>Epson</h3>
-        <p>Ink supplies, printers, and related accessories.</p>
+      <div class="brand-card">
+        <img src="epson-logo.svg" alt="Epson" loading="eager">
       </div>
-    </div>
 
-    <div class="product">
-      <div class="product-content">
-        <h3>Xerox</h3>
-        <p>Business printing supplies and replacement parts.</p>
+      <div class="brand-card">
+        <img src="xerox-logo.svg" alt="Xerox" loading="eager">
       </div>
-    </div>
 
-    <div class="product">
-      <div class="product-content">
-        <h3>Lexmark</h3>
-        <p>Toner cartridges, imaging supplies, and parts.</p>
+      <div class="brand-card">
+        <img src="lexmark-logo.svg" alt="Lexmark" loading="eager">
       </div>
-    </div>
 
+      <!-- Duplicate set for seamless scrolling -->
+      <div class="brand-card" aria-hidden="true">
+        <img src="hp-logo.svg" alt="">
+      </div>
+
+      <div class="brand-card" aria-hidden="true">
+        <img src="canon-logo.svg" alt="">
+      </div>
+
+      <div class="brand-card" aria-hidden="true">
+        <img src="brother-logo.svg" alt="">
+      </div>
+
+      <div class="brand-card" aria-hidden="true">
+        <img src="epson-logo.svg" alt="">
+      </div>
+
+      <div class="brand-card" aria-hidden="true">
+        <img src="xerox-logo.svg" alt="">
+      </div>
+
+      <div class="brand-card" aria-hidden="true">
+        <img src="lexmark-logo.svg" alt="">
+      </div>
+
+    </div>
   </div>
 
-  <p style="text-align: center; margin-top: 20px;">
-    Don't see your brand? Contact us. We can check other brands
-    and products through our suppliers.
+  <p class="brand-note">
+    We are an independent supplier. Brand names and logos
+    belong to their respective owners. Availability varies by product.
+  </p>
+
+  <p style="text-align:center; margin-top:20px;">
+    Don't see your brand?
+    <a href="#quote"
+       style="color:#087bdc; font-weight:700; text-decoration:none;">
+      Request a quote
+    </a>
   </p>
 
 </section>
+
 
 <!-- FEATURED PRODUCTS -->
 <section id="products">
