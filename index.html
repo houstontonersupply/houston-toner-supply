@@ -795,6 +795,71 @@ select {
   }
 }
 
+/* SEARCHABLE PRODUCT CATALOG */
+.catalog-tools {
+  max-width: 1100px;
+  margin: 0 auto 30px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+}
+
+.catalog-tools input,
+.catalog-tools select {
+  padding: 15px;
+  border: 1px solid #d3deea;
+  border-radius: 9px;
+  background: white;
+  font-size: 16px;
+}
+
+.catalog-count {
+  text-align: center;
+  color: #5c6b7d;
+  margin: -12px 0 28px;
+  font-size: 14px;
+}
+
+.product-tag {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  background: #edf6ff;
+  color: #0867b2;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.product-content ul {
+  padding-left: 20px;
+  margin: 0 0 20px;
+  color: #5c6b7d;
+  font-size: 14px;
+}
+
+.product-content li {
+  margin-bottom: 5px;
+}
+
+.product-content h3 {
+  overflow-wrap: anywhere;
+}
+
+.no-products {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 35px;
+  background: white;
+  border-radius: 12px;
+}
+
+@media (max-width: 650px) {
+  .catalog-tools {
+    grid-template-columns: 1fr;
+  }
+}
+
   </style>
 </head>
 
@@ -1011,146 +1076,227 @@ select {
 </section>
 
 
-<!-- FEATURED PRODUCTS -->
+
+<!-- SEARCHABLE PRODUCT CATALOG -->
 <section id="products">
 
   <div class="section-title">
-    <h2>Products & Supplies We Can Source</h2>
+    <h2>Find the Printer Supplies You Need</h2>
     <p>
-      From everyday printer supplies to business equipment
-      and office essentials, contact us to check availability
-      and request a quote.
+      Search by product type, brand, printer model, or part number.
+      We can check supplier availability and provide a personalized quote.
     </p>
   </div>
 
-  <div class="products">
+  <div class="catalog-tools">
+    <input
+      id="productSearch"
+      type="search"
+      placeholder="Search toner, ink, printer model or part number..."
+      aria-label="Search products"
+    >
 
-    <div class="product">
+    <select id="productCategory" aria-label="Filter products by category">
+      <option value="">All categories</option>
+      <option value="toner">Toner cartridges</option>
+      <option value="ink">Ink cartridges</option>
+      <option value="printers">Printers and copiers</option>
+      <option value="parts">Printer parts</option>
+      <option value="maintenance">Maintenance supplies</option>
+      <option value="paper">Paper and office supplies</option>
+      <option value="accessories">Accessories and ribbons</option>
+    </select>
+  </div>
 
-<div class="product-image">
-  <img src="toner-cartridge.jpg"
-       alt="Toner cartridges"
-       style="width:100%; height:210px; object-fit:contain;">
-</div>
-      <div class="product-content">
-        <h3>Toner Cartridges</h3>
-        <p>
-          Genuine OEM, compatible, and remanufactured toner
-          options for business and home printing.
-        </p>
-        <a class="product-button" href="#quote">Request Pricing</a>
-      </div>
-    </div>
+  <p class="catalog-count" id="catalogCount" aria-live="polite">
+    Browse our product categories
+  </p>
 
-    <div class="product">
-<div class="product-image">
-  <img src="ink-cartridges.jpg"
-       alt="Ink cartridges"
-       style="width:100%; height:210px; object-fit:contain;">
-</div>
-      <div class="product-content">
-        <h3>Ink Cartridges & Ink Bottles</h3>
-        <p>
-          Ink supplies for compatible inkjet printers,
-          offices, and everyday printing needs.
-        </p>
-        <a class="product-button" href="#quote">Request Pricing</a>
-      </div>
-    </div>
+  <div class="products" id="catalogGrid">
 
-    <div class="product">
-<div class="product-image">
-  <img src="printers.jpg"
-       alt="Printers and copiers"
-       style="width:100%; height:210px; object-fit:contain;">
-</div>
-      <div class="product-content">
-        <h3>Printers & Copiers</h3>
-        <p>
-          Business laser printers, multifunction printers,
-          scanners, and copiers, subject to availability.
-        </p>
-        <a class="product-button" href="#quote">Request Pricing</a>
-      </div>
-    </div>
-
-    <div class="product">
-<div class="product-image">
-  <img src="printer-parts.jpg"
-       alt="Printer parts and fusers"
-       style="width:100%; height:210px; object-fit:contain;">
-</div>
-      <div class="product-content">
-        <h3>Printer Parts & Fusers</h3>
-        <p>
-          Drums, fusers, rollers, maintenance kits,
-          printheads, and other replacement components.
-        </p>
-        <a class="product-button" href="#quote">Request Pricing</a>
-      </div>
-    </div>
-
-    <div class="product">
-<div class="product-image">
-  <img src="office-supplies.jpg"
-       alt="Office supplies"
-       style="width:100%; height:210px; object-fit:contain;">
-</div>
-      <div class="product-content">
-        <h3>Paper & Office Essentials</h3>
-        <p>
-          Copy paper, labels, envelopes, filing supplies,
-          writing products, and everyday office essentials.
-        </p>
-        <a class="product-button" href="#quote">Request Pricing</a>
-      </div>
-    </div>
-
-    <div class="product">
-<div class="product-image">
-  <img src="printer-accessories.jpg"
-       alt="Printer accessories"
-       style="width:100%; height:210px; object-fit:contain;">
-</div> 
-      <div class="product-content">
-        
-<h3>Printer Accessories</h3>
-<p>
-  Printer accessories, cables, trays, and other compatible
-  supplies for home and business printing.
-</p>
-        <a class="product-button" href="#quote">Request Pricing</a>
-      </div>
-    </div>
-
-    <div class="product">
+    <article class="product" data-category="toner"
+      data-search="toner cartridges hp canon brother xerox lexmark samsung">
       <div class="product-image">
-        <img src="copy-paper.jpg"
-             alt="Copy paper and paper products"
-             style="width:100%; height:210px; object-fit:contain;">
+        <img src="toner-cartridge.jpg"
+          alt="Toner cartridge product category"
+          style="width:100%;height:210px;object-fit:contain;"
+          loading="lazy">
       </div>
       <div class="product-content">
-        <h3>Copy Paper &amp; Paper Products</h3>
-        <p>
-          Copy paper, labels, envelopes, and other paper
-          essentials for home and business use.
-        </p>
-        <a class="product-button" href="#quote">Request Pricing</a>
+        <span class="product-tag">TONER</span>
+        <h3>Toner Cartridges</h3>
+        <p>Laser printers use toner powder to create text and images.
+          Choose a cartridge using your printer model or cartridge number.</p>
+        <ul>
+          <li>Genuine OEM and compatible options</li>
+          <li>Black and color toner options</li>
+          <li>Model and part-number matching</li>
+        </ul>
+        <a class="product-button" href="#quote"
+          onclick="setQuoteProduct('Toner Cartridges')">Request a Quote</a>
       </div>
+    </article>
+
+    <article class="product" data-category="ink"
+      data-search="ink cartridges bottles hp canon brother epson">
+      <div class="product-image">
+        <img src="ink-cartridges.jpg" alt="Ink cartridge product category"
+          style="width:100%;height:210px;object-fit:contain;" loading="lazy">
+      </div>
+      <div class="product-content">
+        <span class="product-tag">INK</span>
+        <h3>Ink Cartridges & Bottles</h3>
+        <p>Inkjet printers use liquid ink. Cartridge shape and printer
+          compatibility matter when selecting a replacement.</p>
+        <ul>
+          <li>Black and color ink</li>
+          <li>Cartridges and refill bottles</li>
+          <li>Printer-model compatibility checks</li>
+        </ul>
+        <a class="product-button" href="#quote"
+          onclick="setQuoteProduct('Ink Cartridges')">Request a Quote</a>
+      </div>
+    </article>
+
+    <article class="product" data-category="printers"
+      data-search="printers copiers laser inkjet multifunction scanner">
+      <div class="product-image">
+        <img src="printers.jpg" alt="Printer and copier category"
+          style="width:100%;height:210px;object-fit:contain;" loading="lazy">
+      </div>
+      <div class="product-content">
+        <span class="product-tag">EQUIPMENT</span>
+        <h3>Printers & Copiers</h3>
+        <p>Compare equipment requirements before requesting a quote.
+          Tell us how you plan to use the printer.</p>
+        <ul>
+          <li>Laser and inkjet equipment</li>
+          <li>Multifunction printing and scanning</li>
+          <li>New or used options, subject to availability</li>
+        </ul>
+        <a class="product-button" href="#quote"
+          onclick="setQuoteProduct('Printers')">Request a Quote</a>
+      </div>
+    </article>
+
+    <article class="product" data-category="parts"
+      data-search="printer parts fuser drum roller printhead tray">
+      <div class="product-image">
+        <img src="printer-parts.jpg" alt="Printer replacement parts category"
+          style="width:100%;height:210px;object-fit:contain;" loading="lazy">
+      </div>
+      <div class="product-content">
+        <span class="product-tag">REPLACEMENT PARTS</span>
+        <h3>Printer Parts & Fusers</h3>
+        <p>Printer components are model-specific. The exact part number
+          helps reduce the risk of ordering an incompatible component.</p>
+        <ul>
+          <li>Fusers, drums and rollers</li>
+          <li>Printheads and paper trays</li>
+          <li>Part-number verification</li>
+        </ul>
+        <a class="product-button" href="#quote"
+          onclick="setQuoteProduct('Printer Parts')">Request a Quote</a>
+      </div>
+    </article>
+
+    <article class="product" data-category="maintenance"
+      data-search="maintenance kit imaging unit drum transfer belt service kit">
+      <div class="product-image">
+        <img src="printer-parts.jpg" alt="Printer maintenance supplies category"
+          style="width:100%;height:210px;object-fit:contain;" loading="lazy">
+      </div>
+      <div class="product-content">
+        <span class="product-tag">MAINTENANCE</span>
+        <h3>Maintenance Kits & Imaging Supplies</h3>
+        <p>Some printers require scheduled replacement of wear parts
+          to maintain print quality and reliable operation.</p>
+        <ul>
+          <li>Maintenance and service kits</li>
+          <li>Imaging units and transfer components</li>
+          <li>Compatibility checks before ordering</li>
+        </ul>
+        <a class="product-button" href="#quote"
+          onclick="setQuoteProduct('Printer Parts')">Request a Quote</a>
+      </div>
+    </article>
+
+    <article class="product" data-category="paper"
+      data-search="copy paper labels envelopes office supplies">
+      <div class="product-image">
+        <img src="copy-paper.jpg" alt="Copy paper and paper supplies"
+          style="width:100%;height:210px;object-fit:contain;" loading="lazy">
+      </div>
+      <div class="product-content">
+        <span class="product-tag">OFFICE ESSENTIALS</span>
+        <h3>Copy Paper & Paper Products</h3>
+        <p>Tell us the paper size, type and quantity so we can
+          identify a suitable product for your needs.</p>
+        <ul>
+          <li>Copy and multipurpose paper</li>
+          <li>Labels and envelopes</li>
+          <li>Individual and bulk requests</li>
+        </ul>
+        <a class="product-button" href="#quote"
+          onclick="setQuoteProduct('Copy Paper & Paper Products')">Request a Quote</a>
+      </div>
+    </article>
+
+    <article class="product" data-category="accessories"
+      data-search="printer accessories cables trays ribbons ink rollers">
+      <div class="product-image">
+        <img src="printer-accessories.jpg" alt="Printer accessories category"
+          style="width:100%;height:210px;object-fit:contain;" loading="lazy">
+      </div>
+      <div class="product-content">
+        <span class="product-tag">ACCESSORIES</span>
+        <h3>Accessories, Ribbons & Ink Rollers</h3>
+        <p>For specialty printers and office equipment, provide
+          the model number and the component you need.</p>
+        <ul>
+          <li>Printer cables and accessories</li>
+          <li>Printer ribbons and ink rollers</li>
+          <li>Product identification assistance</li>
+        </ul>
+        <a class="product-button" href="#quote"
+          onclick="setQuoteProduct('Printer Accessories')">Request a Quote</a>
+      </div>
+    </article>
+
+    <article class="product" data-category="paper"
+      data-search="bulk office supplies business recurring orders wholesale">
+      <div class="product-image">
+        <img src="office-supplies.jpg" alt="Office supply orders"
+          style="width:100%;height:210px;object-fit:contain;" loading="lazy">
+      </div>
+      <div class="product-content">
+        <span class="product-tag">BUSINESS ORDERS</span>
+        <h3>Bulk & Recurring Supply Orders</h3>
+        <p>Combine multiple items in one request. Businesses can
+          share a supply list to simplify sourcing and quoting.</p>
+        <ul>
+          <li>Multiple products and quantities</li>
+          <li>Recurring office supply requirements</li>
+          <li>Quote based on order details</li>
+        </ul>
+        <a class="product-button" href="#quote"
+          onclick="setQuoteProduct('Bulk Order')">Request a Quote</a>
+      </div>
+    </article>
+
+    <div class="no-products" id="noProducts" hidden>
+      <h3>No matching categories found</h3>
+      <p>Try another search or ask us to source a product for you.</p>
+      <a href="#quote" class="product-button"
+        style="margin-top:16px;">Request Help Finding a Product</a>
     </div>
 
   </div>
 
-  <p style="text-align: center; margin-top: 25px;">
-    Can't find what you need? Send us the product name,
-    printer model, cartridge number, or part number.
-    We'll check supplier availability and provide a quote.
-  </p>
-
-  <p style="text-align: center; font-size: 14px;">
-    Products may be sourced to order and are not necessarily
-    in stock. Pricing, availability, and delivery times are
-    confirmed when you request a quote.
+  <p style="text-align:center;margin-top:28px;color:#5c6b7d;">
+    We do not display fixed prices because supplier costs and availability
+    can change. Product compatibility, availability, pricing and delivery
+    are confirmed when you request a quote.
   </p>
 
 </section>
@@ -1564,6 +1710,94 @@ select {
 <script>
 
   
+
+function setQuoteProduct(productName) {
+  const detailsField = document.querySelector(
+    'textarea[name="Product Details"]'
+  );
+
+  const categoryField = document.querySelector(
+    'select[name="Product Category"]'
+  );
+
+  const categoryMap = {
+    "Toner Cartridges": "Toner Cartridges",
+    "Ink Cartridges": "Ink Cartridges",
+    "Printers & Copiers": "Printers",
+    "Printer Parts & Fusers": "Printer Parts",
+    "Maintenance Kits": "Printer Parts",
+    "Copy Paper & Paper Products": "Copy Paper & Paper Products",
+    "Printer Ribbons & Ink Rollers": "Printer Accessories",
+    "Bulk Orders": "Bulk Order"
+  };
+
+  if (detailsField) {
+    detailsField.value =
+      productName +
+      "\nPrinter model / part number: \nQuantity: ";
+  }
+
+  if (categoryField && categoryMap[productName]) {
+    categoryField.value = categoryMap[productName];
+  }
+
+  document.querySelector("#quote").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function filterCatalog() {
+  const searchField = document.querySelector("#productSearch");
+  const categoryField = document.querySelector("#productCategory");
+  const grid = document.querySelector("#catalogGrid");
+  const count = document.querySelector("#catalogCount");
+  const noProducts = document.querySelector("#noProducts");
+
+  if (!searchField || !categoryField || !grid) return;
+
+  const searchTerm = searchField.value.toLowerCase().trim();
+  const selectedCategory = categoryField.value;
+  const products = grid.querySelectorAll(".product-card");
+  let visibleCount = 0;
+
+  products.forEach(function(product) {
+    const searchText = product.dataset.search || "";
+    const productCategory = product.dataset.category || "";
+
+    const matchesSearch = searchText.includes(searchTerm);
+    const matchesCategory =
+      !selectedCategory || productCategory === selectedCategory;
+
+    const showProduct = matchesSearch && matchesCategory;
+
+    product.hidden = !showProduct;
+
+    if (showProduct) visibleCount++;
+  });
+
+  if (count) {
+    count.textContent = visibleCount + " categories found";
+  }
+
+  if (noProducts) {
+    noProducts.hidden = visibleCount !== 0;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const searchField = document.querySelector("#productSearch");
+  const categoryField = document.querySelector("#productCategory");
+
+  if (searchField) {
+    searchField.addEventListener("input", filterCatalog);
+  }
+
+  if (categoryField) {
+    categoryField.addEventListener("change", filterCatalog);
+  }
+
+  filterCatalog();
+});
 
 function submitQuote(event) {
   event.preventDefault();
