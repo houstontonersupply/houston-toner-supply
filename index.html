@@ -860,86 +860,6 @@ select {
   }
 }
 
-
-    .product-image-graphic {
-      padding: 0;
-      overflow: hidden;
-      background: #edf6ff;
-    }
-    .product-image-graphic img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-
-
-/* FINAL VISUAL POLISH: clean catalogue-first layout */
-:root { --navy:#10243d; --blue:#087bdc; --muted:#65758a; }
-html { scroll-padding-top: 100px; }
-body { background:#f7f9fc; color:#243348; }
-header { gap:24px; flex-wrap:wrap; padding-left:clamp(18px,5vw,72px); padding-right:clamp(18px,5vw,72px); }
-header > a img { width:176px !important; }
-nav { display:flex; align-items:center; justify-content:flex-end; gap:18px; flex-wrap:wrap; }
-nav a { margin-left:0; font-size:14px; }
-.hero { min-height:510px; }
-.hero-content { max-width:800px; padding-top:74px; padding-bottom:74px; }
-.hero h1 { max-width:720px; font-size:clamp(38px,5vw,58px); }
-.hero p { max-width:620px; font-size:18px; }
-#products { background:#f7f9fc; padding-top:58px; padding-bottom:68px; }
-#products .section-title { margin-bottom:30px; }
-#products .section-title h2 { font-size:clamp(28px,3.2vw,38px); }
-.catalog-tools { max-width:1040px; grid-template-columns:minmax(0,2fr) minmax(220px,1fr); margin-bottom:18px; }
-.catalog-tools input, .catalog-tools select { min-height:54px; box-shadow:0 2px 8px rgba(15,35,60,.035); }
-.catalog-tools input:focus, .catalog-tools select:focus { outline:3px solid rgba(8,123,220,.15); border-color:#087bdc; }
-.catalog-count { margin:0 0 20px; font-weight:700; color:#40536b; }
-.catalog-image-note { max-width:1040px; margin:0 auto 20px; color:#69788b; font-size:13px; text-align:center; }
-.products { max-width:1240px; margin:0 auto; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; align-items:stretch; }
-.product { min-width:0; overflow:hidden; border:1px solid #e4eaf2; border-radius:14px; background:#fff; box-shadow:0 5px 18px rgba(13,34,59,.045); }
-.product:hover { transform:translateY(-3px); box-shadow:0 12px 26px rgba(13,34,59,.09); }
-.product-image { height:178px; min-height:178px; padding:12px; background:#fff; border-bottom:1px solid #edf0f5; }
-.product-image-graphic { padding:8px; background:#fff; }
-.product-image-graphic img { width:100%; height:100%; object-fit:contain; }
-.product-image-graphic:not(.real-product-photo) img { max-width:100%; }
-.product-image.real-product-photo img { object-fit:contain; padding:8px; }
-.product-image.photo-unavailable { background:linear-gradient(135deg,#f3f7fb,#e7eff8); display:flex; align-items:center; justify-content:center; color:#66788e; font-size:13px; text-align:center; }
-.product-image.photo-unavailable::after { content:"Product photo could not load"; }
-.product-content { padding:18px 18px 20px; gap:0; }
-.product-tag { font-size:10px; letter-spacing:.07em; border-radius:5px; padding:5px 8px; align-self:flex-start; }
-.product-content h3 { font-size:19px; line-height:1.3; color:#10243d; margin:0 0 9px; }
-.product-content p { flex:initial; margin:0 0 9px; color:#5c6b7d; font-size:13px; line-height:1.5; }
-.product-content p strong { color:#34465b; }
-.product-content .quote-only-note { margin-top:4px; color:#0870c4; font-size:12px; font-weight:700; }
-.product-button { display:block; width:100%; margin-top:auto; text-align:center; padding:12px 14px; border-radius:8px; font-size:14px; font-weight:700; }
-.categories { grid-template-columns:repeat(3,minmax(0,1fr)); }
-.category { border-radius:14px; }
-.brands-section { background:#fff; }
-.brand-card { box-shadow:0 4px 16px rgba(11,31,58,.045); }
-.services { background:#f0f5fa; }
-.quote { background:#fff; }
-footer { background:#081a32; }
-@media (max-width:1100px) { .products { grid-template-columns:repeat(3,minmax(0,1fr)); } }
-@media (max-width:800px) {
-  header { justify-content:center; }
-  nav { justify-content:center; gap:12px 18px; }
-  .products { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .hero { min-height:480px; }
-}
-@media (max-width:520px) {
-  header { position:static; padding:14px 16px; }
-  header > a img { width:160px !important; }
-  nav { gap:9px 14px; }
-  nav a { font-size:13px; }
-  .hero-content { padding:58px 20px; }
-  .hero h1 { font-size:38px; }
-  .hero p { font-size:16px; }
-  section { padding-left:18px; padding-right:18px; }
-  .products { grid-template-columns:1fr; max-width:380px; }
-  .product-image { height:200px; }
-  .catalog-tools { grid-template-columns:1fr; }
-}
-
   </style>
 </head>
 
@@ -1000,542 +920,6 @@ footer { background:#081a32; }
     </div>
 
   </div>
-
-</section>
-
-<!-- SEARCHABLE PRODUCT CATALOG -->
-<section id="products">
-
-  <div class="section-title">
-    <h2>Find the Printer Supplies You Need</h2>
-    <p>
-      Search by product type, brand, printer model, or part number.
-      We can check supplier availability and provide a personalized quote.
-    </p>
-  </div>
-
-  <div class="catalog-tools">
-    <input
-      id="productSearch"
-      type="search"
-      placeholder="Search toner, ink, printer model or part number..."
-      aria-label="Search products"
-    >
-
-    <select id="productCategory" aria-label="Filter products by category">
-      <option value="">All categories</option>
-      <option value="toner">Toner cartridges</option>
-      <option value="ink">Ink cartridges</option>
-      <option value="printers">Printers and copiers</option>
-      <option value="parts">Printer parts</option>
-      <option value="maintenance">Maintenance supplies</option>
-      <option value="paper">Paper and office supplies</option>
-      <option value="accessories">Accessories and ribbons</option>
-    </select>
-  </div>
-
-  <p class="catalog-count" id="catalogCount" aria-live="polite">
-    Browse products and request a quote
-  </p>
-
-  <p class="catalog-image-note">Product photos are shown where a matching image is available. Other catalogue visuals are illustrative; ask us to confirm the exact item and compatibility before ordering.</p>
-
-  <div class="products" id="catalogGrid">
-
-<article class="product" data-category="ink" data-search="hp 901 cc656an color ink cartridge for compatible hp officejet 4500-series printers.">
-  <div class="product-image product-image-graphic real-product-photo"><img src="https://www.canadatoner.ca/assets/images/HP901_CC656AN_Tri_Color.jpg" alt="HP 901 product photo" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.product-image').classList.add('photo-unavailable');this.remove();"></div>
-  <div class="product-content">
-    <span class="product-tag">INK CARTRIDGE</span>
-    <h3>HP 901</h3>
-    <p><strong>Part Number:</strong> CC656AN</p>
-    <p>Color ink cartridge for compatible HP Officejet 4500-series printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('HP 901 — CC656AN', 'Ink Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="ink" data-search="hp 25 51625a color ink cartridge for compatible hp deskjet printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20HP%2025%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EHP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E25%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for HP 25" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">INK CARTRIDGE</span>
-    <h3>HP 25</h3>
-    <p><strong>Part Number:</strong> 51625A</p>
-    <p>Color ink cartridge for compatible HP DeskJet printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('HP 25 — 51625A', 'Ink Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="ink" data-search="hp 26 51626a black ink cartridge for compatible hp deskjet printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20HP%2026%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EHP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E26%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for HP 26" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">INK CARTRIDGE</span>
-    <h3>HP 26</h3>
-    <p><strong>Part Number:</strong> 51626A</p>
-    <p>Black ink cartridge for compatible HP DeskJet printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('HP 26 — 51626A', 'Ink Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="ink" data-search="hp 45 51645a black ink cartridge for compatible hp printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20HP%2045%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EHP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E45%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for HP 45" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">INK CARTRIDGE</span>
-    <h3>HP 45</h3>
-    <p><strong>Part Number:</strong> 51645A</p>
-    <p>Black ink cartridge for compatible HP printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('HP 45 — 51645A', 'Ink Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="ink" data-search="hp 11 cyan c4836a cyan ink cartridge for compatible hp business inkjet printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20HP%2011%20Cyan%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EHP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E11%20Cyan%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for HP 11 Cyan" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">INK CARTRIDGE</span>
-    <h3>HP 11 Cyan</h3>
-    <p><strong>Part Number:</strong> C4836A</p>
-    <p>Cyan ink cartridge for compatible HP Business Inkjet printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('HP 11 Cyan — C4836A', 'Ink Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="ink" data-search="hp 11 magenta c4837a magenta ink cartridge for compatible hp business inkjet printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20HP%2011%20Magenta%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EHP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E11%20Magenta%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for HP 11 Magenta" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">INK CARTRIDGE</span>
-    <h3>HP 11 Magenta</h3>
-    <p><strong>Part Number:</strong> C4837A</p>
-    <p>Magenta ink cartridge for compatible HP Business Inkjet printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('HP 11 Magenta — C4837A', 'Ink Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="hp 12 black q2612a black laser toner cartridge; confirm printer compatibility before ordering.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20HP%2012%20Black%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EHP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E12%20Black%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for HP 12 Black" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>HP 12 Black</h3>
-    <p><strong>Part Number:</strong> Q2612A</p>
-    <p>Black laser toner cartridge; confirm printer compatibility before ordering.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('HP 12 Black — Q2612A', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="hp 05a black ce505a black laserjet toner cartridge; confirm printer compatibility before ordering.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20HP%2005A%20Black%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EHP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E05A%20Black%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for HP 05A Black" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>HP 05A Black</h3>
-    <p><strong>Part Number:</strong> CE505A</p>
-    <p>Black LaserJet toner cartridge; confirm printer compatibility before ordering.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('HP 05A Black — CE505A', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="hp 78a ce278a black laserjet toner cartridge; confirm printer compatibility before ordering.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20HP%2078A%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EHP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E78A%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for HP 78A" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>HP 78A</h3>
-    <p><strong>Part Number:</strong> CE278A</p>
-    <p>Black LaserJet toner cartridge; confirm printer compatibility before ordering.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('HP 78A — CE278A', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="canon fx-3 fx-3 black toner for compatible canon laserclass models.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Canon%20FX-3%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3ECANON%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3EFX-3%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Canon FX-3" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Canon FX-3</h3>
-    <p><strong>Part Number:</strong> FX-3</p>
-    <p>Black toner for compatible Canon LaserClass models.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Canon FX-3 — FX-3', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="canon fx-8 fx-8 black toner for compatible canon fax and imageclass models.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Canon%20FX-8%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3ECANON%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3EFX-8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Canon FX-8" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Canon FX-8</h3>
-    <p><strong>Part Number:</strong> FX-8</p>
-    <p>Black toner for compatible Canon fax and ImageClass models.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Canon FX-8 — FX-8', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="canon 119 119 black toner for compatible canon lbp and imageclass printers.">
-  <div class="product-image product-image-graphic real-product-photo"><img src="https://s7d1.scene7.com/is/image/canon/3479B001_toner-119-black_primary?fmt=webp-alpha&hei=800&wid=800" alt="Canon 119 product photo" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.product-image').classList.add('photo-unavailable');this.remove();"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Canon 119</h3>
-    <p><strong>Part Number:</strong> 119</p>
-    <p>Black toner for compatible Canon LBP and ImageClass printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Canon 119 — 119', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="canon 120 120 black toner for compatible canon imageclass models.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Canon%20120%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3ECANON%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E120%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Canon 120" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Canon 120</h3>
-    <p><strong>Part Number:</strong> 120</p>
-    <p>Black toner for compatible Canon ImageClass models.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Canon 120 — 120', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="ink" data-search="canon pg-50 pg-50 black ink cartridge for compatible canon pixma printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Canon%20PG-50%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3ECANON%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3EPG-50%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Canon PG-50" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">INK CARTRIDGE</span>
-    <h3>Canon PG-50</h3>
-    <p><strong>Part Number:</strong> PG-50</p>
-    <p>Black ink cartridge for compatible Canon Pixma printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Canon PG-50 — PG-50', 'Ink Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="ink" data-search="canon cl-241 xl cl-241 xl color ink cartridge for compatible canon pixma printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Canon%20CL-241%20XL%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3ECANON%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3ECL-241%20XL%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Canon CL-241 XL" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">INK CARTRIDGE</span>
-    <h3>Canon CL-241 XL</h3>
-    <p><strong>Part Number:</strong> CL-241 XL</p>
-    <p>Color ink cartridge for compatible Canon Pixma printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Canon CL-241 XL — CL-241 XL', 'Ink Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="brother tn-450 tn-450 black toner cartridge; verify printer model compatibility.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Brother%20TN-450%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EBROTHER%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3ETN-450%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Brother TN-450" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Brother TN-450</h3>
-    <p><strong>Part Number:</strong> TN-450</p>
-    <p>Black toner cartridge; verify printer model compatibility.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Brother TN-450 — TN-450', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="brother tn-660 tn-660 black toner cartridge; verify printer model compatibility.">
-  <div class="product-image product-image-graphic real-product-photo"><img src="https://www.brother.cl/-/media/brother/product-catalog-media/images/2021/09/17/14/21/01_tn660_cartoncartridge_091321.png" alt="Brother TN-660 product photo" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.product-image').classList.add('photo-unavailable');this.remove();"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Brother TN-660</h3>
-    <p><strong>Part Number:</strong> TN-660</p>
-    <p>Black toner cartridge; verify printer model compatibility.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Brother TN-660 — TN-660', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="brother tn-760 tn-760 black toner cartridge; verify printer model compatibility.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Brother%20TN-760%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EBROTHER%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3ETN-760%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Brother TN-760" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Brother TN-760</h3>
-    <p><strong>Part Number:</strong> TN-760</p>
-    <p>Black toner cartridge; verify printer model compatibility.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Brother TN-760 — TN-760', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="brother tn-830 tn-830 black toner cartridge; verify printer model compatibility.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Brother%20TN-830%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EBROTHER%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3ETN-830%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Brother TN-830" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Brother TN-830</h3>
-    <p><strong>Part Number:</strong> TN-830</p>
-    <p>Black toner cartridge; verify printer model compatibility.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Brother TN-830 — TN-830', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="parts" data-search="brother dr-630 dr-630 replacement drum unit; verify printer model compatibility.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Brother%20DR-630%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EBROTHER%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3EDR-630%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Brother DR-630" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">PRINTER PART</span>
-    <h3>Brother DR-630</h3>
-    <p><strong>Part Number:</strong> DR-630</p>
-    <p>Replacement drum unit; verify printer model compatibility.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Brother DR-630 — DR-630', 'Printer Parts'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="ink" data-search="brother lc-3011 black lc3011bk black ink cartridge for compatible brother inkjet printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Brother%20LC-3011%20Black%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EBROTHER%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3ELC-3011%20Black%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Brother LC-3011 Black" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">INK CARTRIDGE</span>
-    <h3>Brother LC-3011 Black</h3>
-    <p><strong>Part Number:</strong> LC3011BK</p>
-    <p>Black ink cartridge for compatible Brother inkjet printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Brother LC-3011 Black — LC3011BK', 'Ink Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="ink" data-search="epson t18 multipack t18 four-color ink cartridge multipack; confirm exact printer compatibility.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Epson%20T18%20Multipack%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EEPSON%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3ET18%20Multipack%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Epson T18 Multipack" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">INK CARTRIDGE</span>
-    <h3>Epson T18 Multipack</h3>
-    <p><strong>Part Number:</strong> T18</p>
-    <p>Four-color ink cartridge multipack; confirm exact printer compatibility.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Epson T18 Multipack — T18', 'Ink Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="ink" data-search="epson t252 black t252120 black ink cartridge; confirm exact epson printer compatibility.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Epson%20T252%20Black%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EEPSON%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3ET252%20Black%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Epson T252 Black" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">INK CARTRIDGE</span>
-    <h3>Epson T252 Black</h3>
-    <p><strong>Part Number:</strong> T252120</p>
-    <p>Black ink cartridge; confirm exact Epson printer compatibility.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Epson T252 Black — T252120', 'Ink Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="ink" data-search="epson t702 black t702120 black ink cartridge; confirm exact epson printer compatibility.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Epson%20T702%20Black%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EEPSON%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3ET702%20Black%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Epson T702 Black" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">INK CARTRIDGE</span>
-    <h3>Epson T702 Black</h3>
-    <p><strong>Part Number:</strong> T702120</p>
-    <p>Black ink cartridge; confirm exact Epson printer compatibility.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Epson T702 Black — T702120', 'Ink Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="xerox 106r01218 106r01218 cyan toner cartridge for compatible xerox phaser printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Xerox%20106R01218%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EXEROX%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E106R01218%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Xerox 106R01218" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Xerox 106R01218</h3>
-    <p><strong>Part Number:</strong> 106R01218</p>
-    <p>Cyan toner cartridge for compatible Xerox Phaser printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Xerox 106R01218 — 106R01218', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="xerox 106r01412 106r01412 black toner cartridge for compatible xerox phaser 3300 printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Xerox%20106R01412%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EXEROX%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E106R01412%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Xerox 106R01412" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Xerox 106R01412</h3>
-    <p><strong>Part Number:</strong> 106R01412</p>
-    <p>Black toner cartridge for compatible Xerox Phaser 3300 printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Xerox 106R01412 — 106R01412', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="xerox 106r01595 106r01595 magenta toner cartridge for compatible xerox phaser printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Xerox%20106R01595%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EXEROX%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E106R01595%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Xerox 106R01595" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Xerox 106R01595</h3>
-    <p><strong>Part Number:</strong> 106R01595</p>
-    <p>Magenta toner cartridge for compatible Xerox Phaser printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Xerox 106R01595 — 106R01595', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="xerox 113r00724 113r00724 magenta toner cartridge for compatible xerox phaser 6180 printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Xerox%20113R00724%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EXEROX%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E113R00724%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Xerox 113R00724" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Xerox 113R00724</h3>
-    <p><strong>Part Number:</strong> 113R00724</p>
-    <p>Magenta toner cartridge for compatible Xerox Phaser 6180 printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Xerox 113R00724 — 113R00724', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="lexmark 10s0150 10s0150 black toner cartridge for compatible lexmark e210 printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Lexmark%2010S0150%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3ELEXMARK%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E10S0150%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Lexmark 10S0150" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Lexmark 10S0150</h3>
-    <p><strong>Part Number:</strong> 10S0150</p>
-    <p>Black toner cartridge for compatible Lexmark E210 printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Lexmark 10S0150 — 10S0150', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="lexmark 12a6735 12a6735 black toner cartridge for compatible lexmark t520/t522 printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Lexmark%2012A6735%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3ELEXMARK%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E12A6735%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Lexmark 12A6735" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Lexmark 12A6735</h3>
-    <p><strong>Part Number:</strong> 12A6735</p>
-    <p>Black toner cartridge for compatible Lexmark T520/T522 printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Lexmark 12A6735 — 12A6735', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="lexmark 12a7362 12a7362 black toner cartridge for compatible lexmark t630-series printers.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Lexmark%2012A7362%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3ELEXMARK%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E12A7362%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Lexmark 12A7362" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Lexmark 12A7362</h3>
-    <p><strong>Part Number:</strong> 12A7362</p>
-    <p>Black toner cartridge for compatible Lexmark T630-series printers.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Lexmark 12A7362 — 12A7362', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="toshiba tk-18 tk18 black toner cartridge for compatible toshiba dp-80f/dp-85f equipment.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Toshiba%20TK-18%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3ETOSHIBA%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3ETK-18%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Toshiba TK-18" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Toshiba TK-18</h3>
-    <p><strong>Part Number:</strong> TK18</p>
-    <p>Black toner cartridge for compatible Toshiba DP-80F/DP-85F equipment.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Toshiba TK-18 — TK18', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="parts" data-search="sharp fo-47dr fo-47dr replacement drum unit for compatible sharp equipment.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Sharp%20FO-47DR%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3ESHARP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3EFO-47DR%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Sharp FO-47DR" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">PRINTER PART</span>
-    <h3>Sharp FO-47DR</h3>
-    <p><strong>Part Number:</strong> FO-47DR</p>
-    <p>Replacement drum unit for compatible Sharp equipment.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Sharp FO-47DR — FO-47DR', 'Printer Parts'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="sharp fo-47nd fo-47nd black toner cartridge for compatible sharp fax equipment.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Sharp%20FO-47ND%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3ESHARP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3EFO-47ND%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Sharp FO-47ND" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Sharp FO-47ND</h3>
-    <p><strong>Part Number:</strong> FO-47ND</p>
-    <p>Black toner cartridge for compatible Sharp fax equipment.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Sharp FO-47ND — FO-47ND', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="kyocera tk-17/tk-18 tk-17/tk-18 black toner cartridge for compatible kyocera equipment.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Kyocera%20TK-17%2FTK-18%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EKYOCERA%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3ETK-17%2FTK-18%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Kyocera TK-17/TK-18" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Kyocera TK-17/TK-18</h3>
-    <p><strong>Part Number:</strong> TK-17/TK-18</p>
-    <p>Black toner cartridge for compatible Kyocera equipment.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Kyocera TK-17/TK-18 — TK-17/TK-18', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="samsung ml-2010d3 ml-2010d3 black toner cartridge; confirm exact samsung printer compatibility.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Samsung%20ML-2010D3%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3ESAMSUNG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3EML-2010D3%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Samsung ML-2010D3" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Samsung ML-2010D3</h3>
-    <p><strong>Part Number:</strong> ML-2010D3</p>
-    <p>Black toner cartridge; confirm exact Samsung printer compatibility.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Samsung ML-2010D3 — ML-2010D3', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="dell 2330d 2330d black toner cartridge; confirm exact dell printer compatibility.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Dell%202330D%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EDELL%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3E2330D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Dell 2330D" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Dell 2330D</h3>
-    <p><strong>Part Number:</strong> 2330D</p>
-    <p>Black toner cartridge; confirm exact Dell printer compatibility.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Dell 2330D — 2330D', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="toner" data-search="panasonic ug-3380 ug-3380 black toner cartridge; confirm exact panasonic printer compatibility.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Panasonic%20UG-3380%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EPANASONIC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3EUG-3380%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Panasonic UG-3380" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">TONER CARTRIDGE</span>
-    <h3>Panasonic UG-3380</h3>
-    <p><strong>Part Number:</strong> UG-3380</p>
-    <p>Black toner cartridge; confirm exact Panasonic printer compatibility.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Panasonic UG-3380 — UG-3380', 'Toner Cartridges'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="paper" data-search="office supplies copy paper letter / a4 copy paper and paper products available by quote.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Office%20Supplies%20Copy%20Paper%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EOFFICE%20SUPPLIES%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3ECopy%20Paper%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Office Supplies Copy Paper" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">PAPER & OFFICE</span>
-    <h3>Office Supplies Copy Paper</h3>
-    <p><strong>Part Number:</strong> Letter / A4</p>
-    <p>Copy paper and paper products available by quote.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Office Supplies Copy Paper — Letter / A4', 'Copy Paper & Paper Products'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-<article class="product" data-category="accessories" data-search="office supplies printer ribbons model-specific printer ribbons and ink rollers; specify printer or machine model.">
-  <div class="product-image product-image-graphic"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%20role%3D%22img%22%20aria-label%3D%22Illustrative%20product%20graphic%20for%20Office%20Supplies%20Printer%20Ribbons%22%3E%0A%20%20%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7fbff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dcecff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22box%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23173e66%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23071b32%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22320%22%20height%3D%22180%22%20rx%3D%2212%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22160%22%20cy%3D%22148%22%20rx%3D%2282%22%20ry%3D%2210%22%20fill%3D%22%23b8cce0%22%20opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate%2876%2020%29%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L115%200%20L155%2018%20L50%2034%20Z%22%20fill%3D%22%236b8ba9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2015%20L50%2034%20L50%20130%20L10%20110%20Z%22%20fill%3D%22%23102b49%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M50%2034%20L155%2018%20L155%20112%20L50%20130%20Z%22%20fill%3D%22url%28%23box%29%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M64%2047%20L140%2035%20L140%2043%20L64%2055%20Z%22%20fill%3D%22%2358b7ff%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2270%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EOFFICE%20SUPPLIES%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2291%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2211%22%20fill%3D%22%23ffffff%22%3EPrinter%20Ribbons%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%22108%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%228%22%20fill%3D%22%23dcecff%22%3EILLUSTRATION%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="Illustrative packaging graphic for Office Supplies Printer Ribbons" loading="lazy"></div>
-  <div class="product-content">
-    <span class="product-tag">ACCESSORY</span>
-    <h3>Office Supplies Printer Ribbons</h3>
-    <p><strong>Part Number:</strong> Model-specific</p>
-    <p>Printer ribbons and ink rollers; specify printer or machine model.</p>
-    <p class="quote-only-note">Quote pricing · Availability confirmed on request</p>
-    <a href="#quote" class="product-button" onclick="setSpecificQuote('Office Supplies Printer Ribbons — Model-specific', 'Printer Accessories'); return false;">Request a Quote</a>
-  </div>
-</article>
-
-     <div class="no-products" id="noProducts" hidden>
-      <h3>No matching categories found</h3>
-      <p>Try another search or ask us to source a product for you.</p>
-      <a href="#quote" class="product-button"
-        style="margin-top:16px;">Request Help Finding a Product</a>
-    </div>
-
-  </div>
-
-  <p style="text-align:center;margin-top:28px;color:#5c6b7d;">
-    We do not display fixed prices because supplier costs and availability
-    can change. Product compatibility, availability, pricing and delivery
-    are confirmed when you request a quote.
-  </p>
 
 </section>
 
@@ -1693,7 +1077,168 @@ footer { background:#081a32; }
 
 
 
+<!-- SEARCHABLE PRODUCT CATALOG -->
+<section id="products">
 
+  <div class="section-title">
+    <h2>Find the Printer Supplies You Need</h2>
+    <p>
+      Search by product type, brand, printer model, or part number.
+      We can check supplier availability and provide a personalized quote.
+    </p>
+  </div>
+
+  <div class="catalog-tools">
+    <input
+      id="productSearch"
+      type="search"
+      placeholder="Search toner, ink, printer model or part number..."
+      aria-label="Search products"
+    >
+
+    <select id="productCategory" aria-label="Filter products by category">
+      <option value="">All categories</option>
+      <option value="toner">Toner cartridges</option>
+      <option value="ink">Ink cartridges</option>
+      <option value="printers">Printers and copiers</option>
+      <option value="parts">Printer parts</option>
+      <option value="maintenance">Maintenance supplies</option>
+      <option value="paper">Paper and office supplies</option>
+      <option value="accessories">Accessories and ribbons</option>
+    </select>
+  </div>
+
+  <p class="catalog-count" id="catalogCount" aria-live="polite">
+    Browse our product categories
+  </p>
+
+  <div class="products" id="catalogGrid">
+
+    
+<article class="product" data-category="ink" data-search="hp 901 cc656an color ink cartridge officejet">
+  <div class="product-image">HP 901</div>
+  <div class="product-content">
+    <span class="product-tag">INK CARTRIDGE</span>
+    <h3>HP 901 Ink Cartridge</h3>
+    <p><strong>Part Number:</strong> CC656AN</p>
+    <p>Color ink cartridge for compatible HP Officejet printers.</p>
+    <p><strong>Price:</strong> Request a quote</p>
+    <a href="#quote" class="product-button" onclick="setSpecificQuote('HP 901 Ink Cartridge — CC656AN', 'Ink Cartridges'); return false;">Request a Quote</a>
+  </div>
+</article>
+
+<article class="product" data-category="ink" data-search="hp 25 51625a color ink cartridge deskjet">
+  <div class="product-image">HP 25</div>
+  <div class="product-content">
+    <span class="product-tag">INK CARTRIDGE</span>
+    <h3>HP 25 Color Ink Cartridge</h3>
+    <p><strong>Part Number:</strong> 51625A</p>
+    <p>Color ink for compatible HP DeskJet printers.</p>
+    <p><strong>Price:</strong> Request a quote</p>
+    <a href="#quote" class="product-button" onclick="setSpecificQuote('HP 25 Ink Cartridge — 51625A', 'Ink Cartridges'); return false;">Request a Quote</a>
+  </div>
+</article>
+
+<article class="product" data-category="ink" data-search="hp 26 51626a black ink cartridge deskjet">
+  <div class="product-image">HP 26</div>
+  <div class="product-content">
+    <span class="product-tag">INK CARTRIDGE</span>
+    <h3>HP 26 Black Ink Cartridge</h3>
+    <p><strong>Part Number:</strong> 51626A</p>
+    <p>Black ink for compatible HP DeskJet printers.</p>
+    <p><strong>Price:</strong> Request a quote</p>
+    <a href="#quote" class="product-button" onclick="setSpecificQuote('HP 26 Ink Cartridge — 51626A', 'Ink Cartridges'); return false;">Request a Quote</a>
+  </div>
+</article>
+
+<article class="product" data-category="ink" data-search="hp 45 51645a black ink cartridge">
+  <div class="product-image">HP 45</div>
+  <div class="product-content">
+    <span class="product-tag">INK CARTRIDGE</span>
+    <h3>HP 45 Black Ink Cartridge</h3>
+    <p><strong>Part Number:</strong> 51645A</p>
+    <p>Black ink cartridge for compatible HP printers.</p>
+    <p><strong>Price:</strong> Request a quote</p>
+    <a href="#quote" class="product-button" onclick="setSpecificQuote('HP 45 Ink Cartridge — 51645A', 'Ink Cartridges'); return false;">Request a Quote</a>
+  </div>
+</article>
+
+<article class="product" data-category="toner" data-search="canon fx-3 fx3 black toner laserclass">
+  <div class="product-image">CANON FX-3</div>
+  <div class="product-content">
+    <span class="product-tag">TONER CARTRIDGE</span>
+    <h3>Canon FX-3 Toner Cartridge</h3>
+    <p><strong>Part Number:</strong> FX-3</p>
+    <p>Black toner for compatible Canon LaserClass models.</p>
+    <p><strong>Price:</strong> Request a quote</p>
+    <a href="#quote" class="product-button" onclick="setSpecificQuote('Canon FX-3 Toner Cartridge', 'Toner Cartridges'); return false;">Request a Quote</a>
+  </div>
+</article>
+
+<article class="product" data-category="toner" data-search="canon fx-8 fx8 black toner imageclass fax">
+  <div class="product-image">CANON FX-8</div>
+  <div class="product-content">
+    <span class="product-tag">TONER CARTRIDGE</span>
+    <h3>Canon FX-8 Toner Cartridge</h3>
+    <p><strong>Part Number:</strong> FX-8</p>
+    <p>Black toner for compatible Canon fax and ImageClass models.</p>
+    <p><strong>Price:</strong> Request a quote</p>
+    <a href="#quote" class="product-button" onclick="setSpecificQuote('Canon FX-8 Toner Cartridge', 'Toner Cartridges'); return false;">Request a Quote</a>
+  </div>
+</article>
+
+<article class="product" data-category="toner" data-search="canon 119 black toner lbp6300 lbp6650 imageclass">
+  <div class="product-image">CANON 119</div>
+  <div class="product-content">
+    <span class="product-tag">TONER CARTRIDGE</span>
+    <h3>Canon 119 Toner Cartridge</h3>
+    <p><strong>Part Number:</strong> 119</p>
+    <p>Black toner for compatible Canon LBP and ImageClass printers.</p>
+    <p><strong>Price:</strong> Request a quote</p>
+    <a href="#quote" class="product-button" onclick="setSpecificQuote('Canon 119 Toner Cartridge', 'Toner Cartridges'); return false;">Request a Quote</a>
+  </div>
+</article>
+
+<article class="product" data-category="toner" data-search="toshiba tk18 black toner dp-80f dp-85f">
+  <div class="product-image">TOSHIBA TK18</div>
+  <div class="product-content">
+    <span class="product-tag">TONER CARTRIDGE</span>
+    <h3>Toshiba TK18 Toner Cartridge</h3>
+    <p><strong>Part Number:</strong> TK18</p>
+    <p>Black toner for compatible Toshiba DP-series equipment.</p>
+    <p><strong>Price:</strong> Request a quote</p>
+    <a href="#quote" class="product-button" onclick="setSpecificQuote('Toshiba TK18 Toner Cartridge', 'Toner Cartridges'); return false;">Request a Quote</a>
+  </div>
+</article>
+
+<article class="product" data-category="parts" data-search="sharp fo-47dr drum unit replacement fax">
+  <div class="product-image">SHARP FO-47DR</div>
+  <div class="product-content">
+    <span class="product-tag">PRINTER PART</span>
+    <h3>Sharp FO-47DR Drum Unit</h3>
+    <p><strong>Part Number:</strong> FO-47DR</p>
+    <p>Replacement drum unit for compatible Sharp equipment.</p>
+    <p><strong>Price:</strong> Request a quote</p>
+    <a href="#quote" class="product-button" onclick="setSpecificQuote('Sharp FO-47DR Drum Unit', 'Printer Parts'); return false;">Request a Quote</a>
+  </div>
+</article>
+
+    <div class="no-products" id="noProducts" hidden>
+      <h3>No matching categories found</h3>
+      <p>Try another search or ask us to source a product for you.</p>
+      <a href="#quote" class="product-button"
+        style="margin-top:16px;">Request Help Finding a Product</a>
+    </div>
+
+  </div>
+
+  <p style="text-align:center;margin-top:28px;color:#5c6b7d;">
+    We do not display fixed prices because supplier costs and availability
+    can change. Product compatibility, availability, pricing and delivery
+    are confirmed when you request a quote.
+  </p>
+
+</section>
 
 <!-- SERVICES -->
 <section id="services" class="services">
@@ -2193,7 +1738,7 @@ function filterCatalog() {
   });
 
   if (count) {
-    count.textContent = visibleCount + " products found";
+    count.textContent = visibleCount + " categories found";
   }
 
   if (noProducts) {
