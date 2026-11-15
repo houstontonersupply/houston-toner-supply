@@ -5,90 +5,722 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Houston Toner Supply helps businesses find HP, Brother, Canon, Konica Minolta, Samsung, Lexmark and Epson toner, drum and ink supplies.">
   <meta name="theme-color" content="#081a32">
+
   <title>Houston Toner Supply | Toner, Drum & Ink Supplies</title>
+
   <style>
-    :root{--navy:#081a32;--navy2:#0b2545;--blue:#087bdc;--sky:#eaf5ff;--ink:#203047;--muted:#617187;--line:#e2eaf2;--paper:#f6f9fc;--white:#fff;--shadow:0 12px 34px rgba(8,26,50,.08)}
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;scroll-padding-top:90px}
-    body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
-    a{color:inherit}
-    .container{width:min(1160px,90%);margin-inline:auto}
-    header{position:sticky;top:0;z-index:20;background:rgba(8,26,50,.98);box-shadow:0 5px 24px rgba(5,24,48,.16)}
-    .header-inner{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand-logo img{display:block;width:190px;max-width:42vw;height:auto}
-    nav{display:flex;align-items:center;justify-content:flex-end;gap:22px;flex-wrap:wrap}
-    nav a{color:#fff;text-decoration:none;font-size:14px;font-weight:700}
-    nav a:hover{color:#70c3ff}
-    .hero{min-height:570px;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(3,15,32,.94),rgba(3,15,32,.68) 60%,rgba(3,15,32,.42)),url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Downtown%20Houston%20Skyline%20Night.JPG') center/cover no-repeat}
-    .hero-content{padding:85px 0;max-width:760px}
-    .eyebrow{display:inline-block;padding:7px 14px;border:1px solid rgba(112,195,255,.6);border-radius:30px;background:rgba(69,168,255,.15);color:#a8d9ff;font-size:13px;font-weight:800;letter-spacing:.08em;margin-bottom:20px}
-    h1{font-size:clamp(38px,6vw,62px);line-height:1.08;letter-spacing:-1.5px;margin-bottom:22px}
-    h1 span{color:#61baff}
-    .hero p{max-width:650px;color:#e5edf7;font-size:19px;margin-bottom:30px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:8px;text-decoration:none;font-weight:800;border:2px solid transparent;transition:.2s}
-    .btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:#0665b5;transform:translateY(-2px)}
-    .btn-outline{border-color:#fff;color:#fff}.btn-outline:hover{background:#fff;color:var(--navy)}
-    section{padding:76px 0}
-    .section-heading{text-align:center;max-width:760px;margin:0 auto 38px}
-    .section-heading h2{font-size:clamp(28px,4vw,38px);line-height:1.2;color:var(--navy);letter-spacing:-.6px;margin-bottom:12px}
-    .section-heading p{font-size:17px;color:var(--muted)}
-    .categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-    .category-card{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
-    .category-card:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(8,26,50,.13)}
-    .category-art{height:165px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#edf7ff,#dcecff)}
-    .category-art::before,.category-art::after{content:"";position:absolute;border-radius:50%;background:rgba(8,123,220,.07)}
-    .category-art::before{width:190px;height:190px;right:-55px;top:-85px}
-    .category-art::after{width:130px;height:130px;left:-45px;bottom:-70px}
-    .category-art img{position:relative;z-index:1;width:100%;height:100%;max-width:220px;object-fit:contain;padding:12px}
-    .category-body{padding:22px 23px 24px}
-    .category-body h3{font-size:19px;line-height:1.3;color:var(--navy);margin-bottom:8px}
-    .category-body p{font-size:14px;color:var(--muted);min-height:48px;margin-bottom:17px}
-    .text-link{color:var(--blue);font-weight:800;text-decoration:none}.text-link:hover{text-decoration:underline}
-    .note{margin:28px auto 0;max-width:900px;text-align:center;color:var(--muted);font-size:13px}
-    .brands{background:linear-gradient(180deg,#fff,#f2f7fc)}
-    .brand-list{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-    .brand-pill{padding:12px 20px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--navy);font-weight:800;box-shadow:0 5px 18px rgba(11,31,58,.04)}
-    .services{background:var(--paper)}
-    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .service{padding:26px;background:#fff;border:1px solid var(--line);border-radius:13px}
-    .service-number{font-size:27px;color:var(--blue);font-weight:900;margin-bottom:8px}
-    .service h3{color:var(--navy);font-size:19px;margin-bottom:8px}.service p{color:var(--muted);font-size:14px}
-    .about{background:var(--navy);color:#fff;text-align:center}
-    .about h2{font-size:clamp(28px,4vw,38px);margin-bottom:14px}.about p{max-width:800px;margin:0 auto;color:#dbe5f0;font-size:17px}
-    .about .btn{margin-top:25px}
-    .quote{background:#fff}
-    .quote-box{max-width:780px;margin:auto;padding:34px;background:#f7faff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
-    form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    input,select,textarea{width:100%;padding:14px;border:1px solid #ccd8e5;border-radius:8px;background:#fff;font:inherit;font-size:15px;color:var(--ink)}
-    input:focus,select:focus,textarea:focus{outline:3px solid rgba(8,123,220,.13);border-color:var(--blue)}
-    textarea{min-height:130px;resize:vertical;grid-column:1/-1}
-    .full{grid-column:1/-1}
-    form button{border:0;cursor:pointer;font:inherit;font-weight:800}
-    .form-note{font-size:13px;color:var(--muted);margin-top:14px;text-align:center}
-    .whatsapp-band{padding:30px 0;background:#eaf5ff;text-align:center}
-    .whatsapp-band p{color:var(--muted);margin-bottom:12px}
-    .whatsapp-btn{background:#20b968;color:#fff}
-    .faq-list{max-width:900px;margin:auto;display:grid;gap:12px}
-    details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 20px}
-    summary{cursor:pointer;color:var(--navy);font-weight:800}details p{color:var(--muted);padding-top:12px}
-    .contact-strip{background:#eaf5ff;padding:34px 0}
-    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
-    .contact-item h3{color:var(--navy);font-size:17px;margin-bottom:5px}.contact-item a{color:var(--blue);font-weight:800;text-decoration:none}.contact-item p{color:var(--muted)}
-    footer{background:#071426;color:#dbe5f0;padding:38px 0 22px}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
-    footer h3{color:#fff;margin-bottom:10px}footer p,footer li{font-size:14px;margin-bottom:7px}footer ul{list-style:none}footer a{color:#8dccff;text-decoration:none}
-    .copyright{text-align:center;border-top:1px solid #26374e;margin-top:28px;padding-top:18px;color:#9eacbd;font-size:13px}
-    @media(max-width:900px){.categories{grid-template-columns:repeat(2,minmax(0,1fr))}.service-grid{grid-template-columns:repeat(2,1fr)}nav{gap:12px}.header-inner{padding:12px 0}}
-    @media(max-width:650px){.header-inner{flex-direction:column;gap:10px;padding:12px 0}.brand-logo img{width:170px}nav{justify-content:center;gap:8px 14px}nav a{font-size:13px}.hero{min-height:540px}.hero-content{padding:65px 0}.hero p{font-size:17px}.categories,.service-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}section{padding:56px 0}.category-art{height:150px}.quote-box{padding:22px 16px}form{grid-template-columns:1fr}form>*{grid-column:1/-1}.actions .btn{width:100%}}
+    :root{
+      --navy:#081a32;
+      --navy2:#0b2545;
+      --blue:#087bdc;
+      --sky:#eaf5ff;
+      --ink:#203047;
+      --muted:#617187;
+      --line:#e2eaf2;
+      --paper:#f6f9fc;
+      --white:#fff;
+      --shadow:0 12px 34px rgba(8,26,50,.08);
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top:90px;
+    }
+
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.65;
+    }
+
+    a{
+      color:inherit;
+    }
+
+    .container{
+      width:min(1160px,90%);
+      margin-inline:auto;
+    }
+
+    /* HEADER */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(8,26,50,.98);
+      box-shadow:0 5px 24px rgba(5,24,48,.16);
+    }
+
+    .header-inner{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand-logo img{
+      display:block;
+      width:190px;
+      max-width:42vw;
+      height:auto;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    nav a:hover{
+      color:#70c3ff;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:570px;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(3,15,32,.94),
+          rgba(3,15,32,.68) 60%,
+          rgba(3,15,32,.42)
+        ),
+        url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Downtown%20Houston%20Skyline%20Night.JPG')
+        center/cover no-repeat;
+    }
+
+    .hero-content{
+      padding:85px 0;
+      max-width:760px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:7px 14px;
+      border:1px solid rgba(112,195,255,.6);
+      border-radius:30px;
+      background:rgba(69,168,255,.15);
+      color:#a8d9ff;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.08em;
+      margin-bottom:20px;
+    }
+
+    h1{
+      font-size:clamp(38px,6vw,62px);
+      line-height:1.08;
+      letter-spacing:-1.5px;
+      margin-bottom:22px;
+    }
+
+    h1 span{
+      color:#61baff;
+    }
+
+    .hero p{
+      max-width:650px;
+      color:#e5edf7;
+      font-size:19px;
+      margin-bottom:30px;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:13px 21px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:800;
+      border:2px solid transparent;
+      transition:.2s;
+    }
+
+    .btn-primary{
+      background:var(--blue);
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      background:#0665b5;
+      transform:translateY(-2px);
+    }
+
+    .btn-outline{
+      border-color:#fff;
+      color:#fff;
+    }
+
+    .btn-outline:hover{
+      background:#fff;
+      color:var(--navy);
+    }
+
+    /* GENERAL SECTIONS */
+
+    section{
+      padding:76px 0;
+    }
+
+    .section-heading{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 38px;
+    }
+
+    .section-heading h2{
+      font-size:clamp(28px,4vw,38px);
+      line-height:1.2;
+      color:var(--navy);
+      letter-spacing:-.6px;
+      margin-bottom:12px;
+    }
+
+    .section-heading p{
+      font-size:17px;
+      color:var(--muted);
+    }
+
+    /* PRODUCT CATEGORIES */
+
+    .categories{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:22px;
+    }
+
+    .category-card{
+      overflow:hidden;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:15px;
+      box-shadow:var(--shadow);
+      transition:transform .2s,box-shadow .2s;
+    }
+
+    .category-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 16px 38px rgba(8,26,50,.13);
+    }
+
+    .category-art{
+      height:165px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(135deg,#edf7ff,#dcecff);
+    }
+
+    .category-art::before,
+    .category-art::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      background:rgba(8,123,220,.07);
+    }
+
+    .category-art::before{
+      width:190px;
+      height:190px;
+      right:-55px;
+      top:-85px;
+    }
+
+    .category-art::after{
+      width:130px;
+      height:130px;
+      left:-45px;
+      bottom:-70px;
+    }
+
+    .category-art img{
+      position:relative;
+      z-index:1;
+      width:100%;
+      height:100%;
+      max-width:220px;
+      object-fit:contain;
+      padding:12px;
+    }
+
+    .category-body{
+      padding:22px 23px 24px;
+    }
+
+    .category-body h3{
+      font-size:19px;
+      line-height:1.3;
+      color:var(--navy);
+      margin-bottom:8px;
+    }
+
+    .category-body p{
+      font-size:14px;
+      color:var(--muted);
+      min-height:48px;
+      margin-bottom:17px;
+    }
+
+    .text-link{
+      color:var(--blue);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .text-link:hover{
+      text-decoration:underline;
+    }
+
+    .note{
+      margin:28px auto 0;
+      max-width:900px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* BRAND LOGOS */
+
+    .brands{
+      background:linear-gradient(180deg,#fff,#f2f7fc);
+    }
+
+    .brand-list{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:20px;
+      max-width:950px;
+      margin:0 auto;
+    }
+
+    .brand-pill{
+      height:120px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:12px;
+      box-shadow:0 5px 18px rgba(11,31,58,.05);
+      transition:transform .2s,box-shadow .2s;
+    }
+
+    .brand-pill:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 25px rgba(11,31,58,.10);
+    }
+
+    .brand-pill img{
+      display:block;
+      max-width:150px;
+      max-height:65px;
+      width:auto;
+      height:auto;
+      object-fit:contain;
+    }
+
+    .brand-text{
+      color:var(--navy);
+      font-size:18px;
+      font-weight:800;
+      text-align:center;
+    }
+
+    .brand-note{
+      margin:25px auto 0;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* SERVICES */
+
+    .services{
+      background:var(--paper);
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .service{
+      padding:26px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:13px;
+    }
+
+    .service-number{
+      font-size:27px;
+      color:var(--blue);
+      font-weight:900;
+      margin-bottom:8px;
+    }
+
+    .service h3{
+      color:var(--navy);
+      font-size:19px;
+      margin-bottom:8px;
+    }
+
+    .service p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* ABOUT */
+
+    .about{
+      background:var(--navy);
+      color:#fff;
+      text-align:center;
+    }
+
+    .about h2{
+      font-size:clamp(28px,4vw,38px);
+      margin-bottom:14px;
+    }
+
+    .about p{
+      max-width:800px;
+      margin:0 auto;
+      color:#dbe5f0;
+      font-size:17px;
+    }
+
+    .about .btn{
+      margin-top:25px;
+    }
+
+    /* QUOTE FORM */
+
+    .quote{
+      background:#fff;
+    }
+
+    .quote-box{
+      max-width:780px;
+      margin:auto;
+      padding:34px;
+      background:#f7faff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+    }
+
+    form{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    input,select,textarea{
+      width:100%;
+      padding:14px;
+      border:1px solid #ccd8e5;
+      border-radius:8px;
+      background:#fff;
+      font:inherit;
+      font-size:15px;
+      color:var(--ink);
+    }
+
+    input:focus,select:focus,textarea:focus{
+      outline:3px solid rgba(8,123,220,.13);
+      border-color:var(--blue);
+    }
+
+    textarea{
+      min-height:130px;
+      resize:vertical;
+      grid-column:1/-1;
+    }
+
+    .full{
+      grid-column:1/-1;
+    }
+
+    form button{
+      border:0;
+      cursor:pointer;
+      font:inherit;
+      font-weight:800;
+    }
+
+    .form-note{
+      font-size:13px;
+      color:var(--muted);
+      margin-top:14px;
+      text-align:center;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp-band{
+      padding:30px 0;
+      background:#eaf5ff;
+      text-align:center;
+    }
+
+    .whatsapp-band p{
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+
+    .whatsapp-btn{
+      background:#20b968;
+      color:#fff;
+    }
+
+    /* FAQ */
+
+    .faq-list{
+      max-width:900px;
+      margin:auto;
+      display:grid;
+      gap:12px;
+    }
+
+    details{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:18px 20px;
+    }
+
+    summary{
+      cursor:pointer;
+      color:var(--navy);
+      font-weight:800;
+    }
+
+    details p{
+      color:var(--muted);
+      padding-top:12px;
+    }
+
+    /* CONTACT */
+
+    .contact-strip{
+      background:#eaf5ff;
+      padding:34px 0;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      text-align:center;
+    }
+
+    .contact-item h3{
+      color:var(--navy);
+      font-size:17px;
+      margin-bottom:5px;
+    }
+
+    .contact-item a{
+      color:var(--blue);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .contact-item p{
+      color:var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#071426;
+      color:#dbe5f0;
+      padding:38px 0 22px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:30px;
+    }
+
+    footer h3{
+      color:#fff;
+      margin-bottom:10px;
+    }
+
+    footer p,footer li{
+      font-size:14px;
+      margin-bottom:7px;
+    }
+
+    footer ul{
+      list-style:none;
+    }
+
+    footer a{
+      color:#8dccff;
+      text-decoration:none;
+    }
+
+    .copyright{
+      text-align:center;
+      border-top:1px solid #26374e;
+      margin-top:28px;
+      padding-top:18px;
+      color:#9eacbd;
+      font-size:13px;
+    }
+
+    /* TABLET */
+
+    @media(max-width:900px){
+      .categories{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .service-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      nav{
+        gap:12px;
+      }
+
+      .header-inner{
+        padding:12px 0;
+      }
+    }
+
+    /* MOBILE */
+
+    @media(max-width:650px){
+
+      .header-inner{
+        flex-direction:column;
+        gap:10px;
+        padding:12px 0;
+      }
+
+      .brand-logo img{
+        width:170px;
+      }
+
+      nav{
+        justify-content:center;
+        gap:8px 14px;
+      }
+
+      nav a{
+        font-size:13px;
+      }
+
+      .hero{
+        min-height:540px;
+      }
+
+      .hero-content{
+        padding:65px 0;
+      }
+
+      .hero p{
+        font-size:17px;
+      }
+
+      .categories,
+      .service-grid,
+      .contact-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .brand-list{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:12px;
+      }
+
+      .brand-pill{
+        height:100px;
+        padding:12px;
+      }
+
+      .brand-pill img{
+        max-width:125px;
+        max-height:55px;
+      }
+
+      section{
+        padding:56px 0;
+      }
+
+      .category-art{
+        height:150px;
+      }
+
+      .quote-box{
+        padding:22px 16px;
+      }
+
+      form{
+        grid-template-columns:1fr;
+      }
+
+      form>*{
+        grid-column:1/-1;
+      }
+
+      .actions .btn{
+        width:100%;
+      }
+    }
+
   </style>
 </head>
+
 <body>
+
+<!-- HEADER -->
+
 <header>
   <div class="container header-inner">
+
     <a class="brand-logo" href="https://houstontonersupply.com/" aria-label="Houston Toner Supply homepage">
       <img src="Houston%20Toner%20Supply%20Logo.png" alt="Houston Toner Supply logo">
     </a>
+
     <nav aria-label="Main navigation">
       <a href="#products">Categories</a>
       <a href="#brands">Brands</a>
@@ -97,28 +729,54 @@
       <a href="#quote">Get a Quote</a>
       <a href="#contact">Contact</a>
     </nav>
+
   </div>
 </header>
+
 <main>
+
+  <!-- HERO SECTION -->
+
   <section class="hero">
     <div class="container hero-content">
+
       <div class="eyebrow">HOUSTON • TEXAS</div>
-      <h1>Printer Supplies Built for <span>Business.</span></h1>
-      <p>Find toner cartridges, drum units and ink supplies for your office or business. Tell us what you need and we'll help check availability and pricing.</p>
+
+      <h1>
+        Printer Supplies Built for
+        <span>Business.</span>
+      </h1>
+
+      <p>
+        Find toner cartridges, drum units and ink supplies
+        for your office or business. Tell us what you need
+        and we'll help check availability and pricing.
+      </p>
+
       <div class="actions">
         <a class="btn btn-primary" href="#products">Explore Categories</a>
         <a class="btn btn-outline" href="#quote">Request a Quote</a>
         <a class="btn btn-outline" href="tel:+13462873776">Call 346-287-3776</a>
       </div>
+
     </div>
   </section>
 
+  <!-- PRODUCT CATEGORIES -->
+
   <section id="products">
+
     <div class="container">
+
       <div class="section-heading">
         <h2>Browse Our Product Categories</h2>
-        <p>We help source toner, drum and ink supplies across leading printer brands. Select a category to request availability and pricing.</p>
+        <p>
+          We help source toner, drum and ink supplies across
+          leading printer brands. Select a category to request
+          availability and pricing.
+        </p>
       </div>
+
       <div class="categories">
 
         <article class="category-card">
@@ -232,89 +890,196 @@
         </article>
 
       </div>
-      <p class="note">Product compatibility and availability depend on the printer model and supplier stock. Please include your printer model or cartridge number when requesting a quote. Houston Toner Supply is an independent supplier; all brand names belong to their respective owners.</p>
+
+      <p class="note">
+        Product compatibility and availability depend on the printer
+        model and supplier stock. Please include your printer model
+        or cartridge number when requesting a quote. Houston Toner
+        Supply is an independent supplier; all brand names belong
+        to their respective owners.
+      </p>
+
     </div>
   </section>
+
+  <!-- BRANDS WITH ACTUAL LOGOS -->
 
   <section id="brands" class="brands">
+
     <div class="container">
+
       <div class="section-heading">
         <h2>Brands We Help You Source</h2>
-        <p>Looking for another model or part? Contact us and we'll check supplier availability.</p>
+        <p>
+          We help businesses source toner, drum units and ink
+          supplies from leading printer brands. Contact us
+          for availability and pricing.
+        </p>
       </div>
+
       <div class="brand-list">
-        <span class="brand-pill">HP</span>
-        <span class="brand-pill">Brother</span>
-        <span class="brand-pill">Canon</span>
-        <span class="brand-pill">Konica Minolta</span>
-        <span class="brand-pill">Samsung</span>
-        <span class="brand-pill">Lexmark</span>
-        <span class="brand-pill">Epson</span>
+
+        <div class="brand-pill">
+          <img src="hp-logo.svg" alt="HP logo">
+        </div>
+
+        <div class="brand-pill">
+          <img src="Brother-logo.svg" alt="Brother logo">
+        </div>
+
+        <div class="brand-pill">
+          <img src="canon-logo.svg" alt="Canon logo">
+        </div>
+
+        <div class="brand-pill">
+          <img src="Epson-logo.svg" alt="Epson logo">
+        </div>
+
+        <div class="brand-pill">
+          <img src="Lexmark-logo.svg" alt="Lexmark logo">
+        </div>
+
+        <div class="brand-pill">
+          <img src="xerox-logo.svg" alt="Xerox logo">
+        </div>
+
+        <div class="brand-pill brand-text">
+          KONICA MINOLTA
+        </div>
+
+        <div class="brand-pill brand-text">
+          SAMSUNG
+        </div>
+
       </div>
+
+      <p class="brand-note">
+        Can't find your printer brand or model?
+        Contact us and we'll help check supplier availability.
+      </p>
+
     </div>
   </section>
 
+  <!-- SERVICES -->
+
   <section id="services" class="services">
+
     <div class="container">
+
       <div class="section-heading">
         <h2>How Houston Toner Supply Works</h2>
         <p>A straightforward way to find the supplies your printer needs.</p>
       </div>
+
       <div class="service-grid">
+
         <article class="service">
           <div class="service-number">01</div>
           <h3>Tell Us What You Need</h3>
           <p>Share the product category, printer brand and model, cartridge number, or quantity.</p>
         </article>
+
         <article class="service">
           <div class="service-number">02</div>
           <h3>We Check Availability</h3>
           <p>We'll check with suppliers and confirm compatible options and current pricing.</p>
         </article>
+
         <article class="service">
           <div class="service-number">03</div>
           <h3>Get Your Quote</h3>
           <p>We'll respond with the available option and quote details for your review.</p>
         </article>
+
         <article class="service">
           <div class="service-number">04</div>
           <h3>Houston Area</h3>
           <p>Ask us about local delivery options based on your location and order.</p>
         </article>
+
         <article class="service">
           <div class="service-number">05</div>
           <h3>Business & Bulk Orders</h3>
           <p>Contact us about larger quantities and recurring office supply requirements.</p>
         </article>
+
         <article class="service">
           <div class="service-number">06</div>
           <h3>Need Something Else?</h3>
           <p>If a product isn't listed, send us the details and we'll check whether it can be sourced.</p>
         </article>
+
       </div>
     </div>
   </section>
+
+  <!-- ABOUT -->
 
   <section class="about">
+
     <div class="container">
+
       <h2>Houston Toner Supply</h2>
-      <p>We help individuals, offices and businesses find toner cartridges, drum units and ink supplies. Our goal is to make product sourcing and quote requests simple and convenient.</p>
-      <a class="btn btn-primary" href="#quote">Talk to Us About Your Needs</a>
+
+      <p>
+        We help individuals, offices and businesses find toner
+        cartridges, drum units and ink supplies. Our goal is
+        to make product sourcing and quote requests simple
+        and convenient.
+      </p>
+
+      <a class="btn btn-primary" href="#quote">
+        Talk to Us About Your Needs
+      </a>
+
     </div>
   </section>
 
+  <!-- QUOTE FORM -->
+
   <section id="quote" class="quote">
+
     <div class="container">
+
       <div class="section-heading">
         <h2>Request a Quote</h2>
-        <p>Share a few details so we can check the right product and get back to you.</p>
+        <p>
+          Share a few details so we can check the right product
+          and get back to you.
+        </p>
       </div>
+
       <div class="quote-box">
+
         <form id="quoteForm">
-          <input type="text" name="Customer Name" placeholder="Your name" autocomplete="name" required>
-          <input type="email" name="Email" placeholder="Email address" autocomplete="email" required>
-          <input type="tel" name="Phone Number" placeholder="Phone number" autocomplete="tel" required>
+
+          <input
+            type="text"
+            name="Customer Name"
+            placeholder="Your name"
+            autocomplete="name"
+            required
+          >
+
+          <input
+            type="email"
+            name="Email"
+            placeholder="Email address"
+            autocomplete="email"
+            required
+          >
+
+          <input
+            type="tel"
+            name="Phone Number"
+            placeholder="Phone number"
+            autocomplete="tel"
+            required
+          >
+
           <select id="quoteCategory" name="Product Category" required>
+
             <option value="">Select a product category</option>
             <option>HP LaserJet Toner</option>
             <option>Brother Laser Toner</option>
@@ -327,86 +1092,157 @@
             <option>Epson Inkjet Cartridges</option>
             <option>HP Inkjet Cartridges</option>
             <option>Other / Not Sure</option>
+
           </select>
-          <input type="text" name="Printer Model or Part Number" placeholder="Printer model or part number (if known)">
-          <input type="number" name="Quantity" placeholder="Quantity" min="1">
-          <textarea name="Additional Details" placeholder="Tell us what you need, including color, cartridge number or other details..."></textarea>
-          <button class="btn btn-primary full" type="submit">Continue to WhatsApp to Send Request</button>
+
+          <input
+            type="text"
+            name="Printer Model or Part Number"
+            placeholder="Printer model or part number (if known)"
+          >
+
+          <input
+            type="number"
+            name="Quantity"
+            placeholder="Quantity"
+            min="1"
+          >
+
+          <textarea
+            name="Additional Details"
+            placeholder="Tell us what you need, including color, cartridge number or other details..."
+          ></textarea>
+
+          <button class="btn btn-primary full" type="submit">
+            Continue to WhatsApp to Send Request
+          </button>
+
         </form>
-        <p class="form-note">Your details will be placed in a WhatsApp message to Houston Toner Supply. Review the message and tap <strong>Send</strong> in WhatsApp to submit your request. You can also email <a href="mailto:houstontonersupply@gmail.com">houstontonersupply@gmail.com</a>.</p>
+
+        <p class="form-note">
+          Your details will be placed in a WhatsApp message to
+          Houston Toner Supply. Review the message and tap
+          <strong>Send</strong> in WhatsApp to submit your request.
+          You can also email
+          <a href="mailto:houstontonersupply@gmail.com">
+            houstontonersupply@gmail.com
+          </a>.
+        </p>
+
       </div>
     </div>
   </section>
 
+  <!-- WHATSAPP -->
+
   <div class="whatsapp-band">
+
     <div class="container">
+
       <p>Prefer to message us directly?</p>
-      <a class="btn whatsapp-btn" href="https://wa.me/13462873776?text=Hello%20Houston%20Toner%20Supply%2C%20I%20would%20like%20to%20request%20a%20quote." target="_blank" rel="noopener noreferrer">Chat With Us on WhatsApp</a>
+
+      <a
+        class="btn whatsapp-btn"
+        href="https://wa.me/13462873776?text=Hello%20Houston%20Toner%20Supply%2C%20I%20would%20like%20to%20request%20a%20quote."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Chat With Us on WhatsApp
+      </a>
+
     </div>
   </div>
 
+  <!-- FAQ -->
+
   <section id="faq">
+
     <div class="container">
+
       <div class="section-heading">
         <h2>Frequently Asked Questions</h2>
         <p>Helpful information about products, quotes and delivery.</p>
       </div>
+
       <div class="faq-list">
+
         <details>
           <summary>Do you keep all products in stock?</summary>
           <p>Products may be sourced to order through suppliers. Contact us to confirm availability before placing an order.</p>
         </details>
+
         <details>
           <summary>How do I get a price quote?</summary>
           <p>Use the Request a Quote form, call us, or message us on WhatsApp. Include the printer model or cartridge number and quantity if available.</p>
         </details>
+
         <details>
           <summary>Can you help find a product not listed here?</summary>
           <p>Yes. Send us the product name, printer model or part number and we'll check whether our suppliers can source it.</p>
         </details>
+
         <details>
           <summary>Do you serve individuals as well as businesses?</summary>
           <p>Yes. Individuals, home-office customers and businesses can contact us to request product availability and pricing.</p>
         </details>
+
         <details>
           <summary>Do you offer delivery in Houston?</summary>
           <p>Contact us with your location and order details to confirm local delivery options and timing.</p>
         </details>
+
         <details>
           <summary>Can you ship outside Houston?</summary>
           <p>Shipping to other areas may be available depending on the product and order. Contact us to confirm options and costs.</p>
         </details>
+
       </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
+
   <div class="contact-strip" id="contact">
+
     <div class="container contact-grid">
+
       <div class="contact-item">
         <h3>Call Us</h3>
         <a href="tel:+13462873776">+1 346-287-3776</a>
       </div>
+
       <div class="contact-item">
         <h3>Email Us</h3>
-        <a href="mailto:houstontonersupply@gmail.com">houstontonersupply@gmail.com</a>
+        <a href="mailto:houstontonersupply@gmail.com">
+          houstontonersupply@gmail.com
+        </a>
       </div>
+
       <div class="contact-item">
         <h3>Houston, Texas</h3>
         <p>10919 Stancliff Rd<br>Houston, TX 77099</p>
       </div>
+
     </div>
   </div>
+
 </main>
 
+<!-- FOOTER -->
+
 <footer>
+
   <div class="container">
+
     <div class="footer-grid">
+
       <div>
         <h3>Houston Toner Supply</h3>
         <p>Printer supplies and sourcing support.</p>
         <p>Toner • Drum Units • Ink Cartridges</p>
         <p>Houston, Texas</p>
       </div>
+
       <div>
         <h3>Quick Links</h3>
         <ul>
@@ -416,35 +1252,81 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
+
       <div>
         <h3>Contact</h3>
         <p><a href="tel:+13462873776">346-287-3776</a></p>
         <p><a href="mailto:houstontonersupply@gmail.com">Email Us</a></p>
       </div>
+
     </div>
-    <div class="copyright">© 2026 Houston Toner Supply. All rights reserved.</div>
-    <p class="copyright" style="border:0;margin-top:8px;padding-top:0;font-size:11px">Downtown Houston skyline photo via Wikimedia Commons, licensed under CC BY-SA 3.0.</p>
+
+    <div class="copyright">
+      © 2026 Houston Toner Supply. All rights reserved.
+    </div>
+
+    <p
+      class="copyright"
+      style="border:0;margin-top:8px;padding-top:0;font-size:11px"
+    >
+      Downtown Houston skyline photo via Wikimedia Commons,
+      licensed under CC BY-SA 3.0.
+    </p>
+
   </div>
 </footer>
 
+<!-- JAVASCRIPT -->
+
 <script>
+
   function chooseCategory(category){
-    const field=document.getElementById('quoteCategory');
-    if(field) field.value=category;
-    document.getElementById('quote').scrollIntoView({behavior:'smooth'});
+
+    const field = document.getElementById('quoteCategory');
+
+    if(field){
+      field.value = category;
+    }
+
+    document.getElementById('quote').scrollIntoView({
+      behavior:'smooth'
+    });
+
   }
 
-  document.getElementById('quoteForm').addEventListener('submit',function(event){
-    event.preventDefault();
-    const data=new FormData(event.currentTarget);
-    const lines=[];
-    for(const [name,value] of data.entries()) {
-      if(String(value).trim()) lines.push(name+': '+value);
+  document.getElementById('quoteForm').addEventListener(
+    'submit',
+    function(event){
+
+      event.preventDefault();
+
+      const data = new FormData(event.currentTarget);
+
+      const lines = [];
+
+      for(const [name,value] of data.entries()){
+
+        if(String(value).trim()){
+          lines.push(name + ': ' + value);
+        }
+
+      }
+
+      const message =
+        'Hello Houston Toner Supply, I would like to request a quote.\n\n'
+        + lines.join('\n')
+        + '\n\nThank you.';
+
+      const url =
+        'https://wa.me/13462873776?text='
+        + encodeURIComponent(message);
+
+      window.open(url,'_blank','noopener,noreferrer');
+
     }
-    const message='Hello Houston Toner Supply, I would like to request a quote.\n\n'+lines.join('\n')+'\n\nThank you.';
-    const url='https://wa.me/13462873776?text='+encodeURIComponent(message);
-    window.open(url,'_blank','noopener,noreferrer');
-  });
+  );
+
 </script>
+
 </body>
 </html>
