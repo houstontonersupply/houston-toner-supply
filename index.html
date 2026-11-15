@@ -5,28 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Houston Toner Supply helps businesses find HP, Brother, Canon, Konica Minolta, Samsung, Lexmark and Epson toner, drum and ink supplies.">
   <meta name="theme-color" content="#081a32">
-
   <title>Houston Toner Supply | Toner, Drum & Ink Supplies</title>
 
   <style>
     :root{
       --navy:#081a32;
-      --navy2:#0b2545;
       --blue:#087bdc;
-      --sky:#eaf5ff;
       --ink:#203047;
       --muted:#617187;
       --line:#e2eaf2;
       --paper:#f6f9fc;
-      --white:#fff;
-      --shadow:0 12px 34px rgba(8,26,50,.08);
     }
 
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
 
     html{
       scroll-behavior:smooth;
@@ -40,9 +31,7 @@
       line-height:1.65;
     }
 
-    a{
-      color:inherit;
-    }
+    a{color:inherit}
 
     .container{
       width:min(1160px,90%);
@@ -89,9 +78,7 @@
       font-weight:700;
     }
 
-    nav a:hover{
-      color:#70c3ff;
-    }
+    nav a:hover{color:#70c3ff}
 
     /* HERO */
 
@@ -136,9 +123,7 @@
       margin-bottom:22px;
     }
 
-    h1 span{
-      color:#61baff;
-    }
+    h1 span{color:#61baff}
 
     .hero p{
       max-width:650px;
@@ -187,9 +172,7 @@
 
     /* GENERAL SECTIONS */
 
-    section{
-      padding:76px 0;
-    }
+    section{padding:76px 0}
 
     .section-heading{
       text-align:center;
@@ -223,7 +206,7 @@
       background:#fff;
       border:1px solid var(--line);
       border-radius:15px;
-      box-shadow:var(--shadow);
+      box-shadow:0 12px 34px rgba(8,26,50,.08);
       transition:transform .2s,box-shadow .2s;
     }
 
@@ -274,9 +257,7 @@
       padding:12px;
     }
 
-    .category-body{
-      padding:22px 23px 24px;
-    }
+    .category-body{padding:22px 23px 24px}
 
     .category-body h3{
       font-size:19px;
@@ -298,9 +279,7 @@
       text-decoration:none;
     }
 
-    .text-link:hover{
-      text-decoration:underline;
-    }
+    .text-link:hover{text-decoration:underline}
 
     .note{
       margin:28px auto 0;
@@ -351,13 +330,6 @@
       object-fit:contain;
     }
 
-    .brand-text{
-      color:var(--navy);
-      font-size:18px;
-      font-weight:800;
-      text-align:center;
-    }
-
     .brand-note{
       margin:25px auto 0;
       text-align:center;
@@ -367,9 +339,7 @@
 
     /* SERVICES */
 
-    .services{
-      background:var(--paper);
-    }
+    .services{background:var(--paper)}
 
     .service-grid{
       display:grid;
@@ -422,15 +392,11 @@
       font-size:17px;
     }
 
-    .about .btn{
-      margin-top:25px;
-    }
+    .about .btn{margin-top:25px}
 
     /* QUOTE FORM */
 
-    .quote{
-      background:#fff;
-    }
+    .quote{background:#fff}
 
     .quote-box{
       max-width:780px;
@@ -439,7 +405,7 @@
       background:#f7faff;
       border:1px solid var(--line);
       border-radius:16px;
-      box-shadow:var(--shadow);
+      box-shadow:0 12px 34px rgba(8,26,50,.08);
     }
 
     form{
@@ -470,9 +436,7 @@
       grid-column:1/-1;
     }
 
-    .full{
-      grid-column:1/-1;
-    }
+    .full{grid-column:1/-1}
 
     form button{
       border:0;
@@ -559,9 +523,7 @@
       text-decoration:none;
     }
 
-    .contact-item p{
-      color:var(--muted);
-    }
+    .contact-item p{color:var(--muted)}
 
     /* FOOTER */
 
@@ -587,9 +549,7 @@
       margin-bottom:7px;
     }
 
-    footer ul{
-      list-style:none;
-    }
+    footer ul{list-style:none}
 
     footer a{
       color:#8dccff;
@@ -608,57 +568,33 @@
     /* TABLET */
 
     @media(max-width:900px){
-      .categories{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-
-      .service-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      nav{
-        gap:12px;
-      }
-
-      .header-inner{
-        padding:12px 0;
-      }
+      .categories{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .service-grid{grid-template-columns:repeat(2,1fr)}
+      nav{gap:12px}
+      .header-inner{padding:12px 0}
     }
 
     /* MOBILE */
 
     @media(max-width:650px){
-
       .header-inner{
         flex-direction:column;
         gap:10px;
         padding:12px 0;
       }
 
-      .brand-logo img{
-        width:170px;
-      }
+      .brand-logo img{width:170px}
 
       nav{
         justify-content:center;
         gap:8px 14px;
       }
 
-      nav a{
-        font-size:13px;
-      }
+      nav a{font-size:13px}
 
-      .hero{
-        min-height:540px;
-      }
-
-      .hero-content{
-        padding:65px 0;
-      }
-
-      .hero p{
-        font-size:17px;
-      }
+      .hero{min-height:540px}
+      .hero-content{padding:65px 0}
+      .hero p{font-size:17px}
 
       .categories,
       .service-grid,
@@ -682,31 +618,15 @@
         max-height:55px;
       }
 
-      section{
-        padding:56px 0;
-      }
+      section{padding:56px 0}
+      .category-art{height:150px}
+      .quote-box{padding:22px 16px}
 
-      .category-art{
-        height:150px;
-      }
+      form{grid-template-columns:1fr}
+      form>*{grid-column:1/-1}
 
-      .quote-box{
-        padding:22px 16px;
-      }
-
-      form{
-        grid-template-columns:1fr;
-      }
-
-      form>*{
-        grid-column:1/-1;
-      }
-
-      .actions .btn{
-        width:100%;
-      }
+      .actions .btn{width:100%}
     }
-
   </style>
 </head>
 
@@ -765,7 +685,6 @@
   <!-- PRODUCT CATEGORIES -->
 
   <section id="products">
-
     <div class="container">
 
       <div class="section-heading">
@@ -902,10 +821,9 @@
     </div>
   </section>
 
-  <!-- BRANDS WITH ACTUAL LOGOS -->
+  <!-- BRANDS WITH ALL EIGHT LOGOS -->
 
   <section id="brands" class="brands">
-
     <div class="container">
 
       <div class="section-heading">
@@ -943,12 +861,16 @@
           <img src="xerox-logo.svg" alt="Xerox logo">
         </div>
 
-        <div class="brand-pill brand-text">
-          KONICA MINOLTA
+        <div class="brand-pill">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_Konica_Minolta.svg"
+            alt="Konica Minolta logo">
         </div>
 
-        <div class="brand-pill brand-text">
-          SAMSUNG
+        <div class="brand-pill">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Samsung_wordmark.svg"
+            alt="Samsung logo">
         </div>
 
       </div>
@@ -964,7 +886,6 @@
   <!-- SERVICES -->
 
   <section id="services" class="services">
-
     <div class="container">
 
       <div class="section-heading">
@@ -1017,7 +938,6 @@
   <!-- ABOUT -->
 
   <section class="about">
-
     <div class="container">
 
       <h2>Houston Toner Supply</h2>
@@ -1039,7 +959,6 @@
   <!-- QUOTE FORM -->
 
   <section id="quote" class="quote">
-
     <div class="container">
 
       <div class="section-heading">
@@ -1079,7 +998,6 @@
           >
 
           <select id="quoteCategory" name="Product Category" required>
-
             <option value="">Select a product category</option>
             <option>HP LaserJet Toner</option>
             <option>Brother Laser Toner</option>
@@ -1092,7 +1010,6 @@
             <option>Epson Inkjet Cartridges</option>
             <option>HP Inkjet Cartridges</option>
             <option>Other / Not Sure</option>
-
           </select>
 
           <input
@@ -1136,7 +1053,6 @@
   <!-- WHATSAPP -->
 
   <div class="whatsapp-band">
-
     <div class="container">
 
       <p>Prefer to message us directly?</p>
@@ -1156,7 +1072,6 @@
   <!-- FAQ -->
 
   <section id="faq">
-
     <div class="container">
 
       <div class="section-heading">
@@ -1203,7 +1118,6 @@
   <!-- CONTACT -->
 
   <div class="contact-strip" id="contact">
-
     <div class="container contact-grid">
 
       <div class="contact-item">
@@ -1231,7 +1145,6 @@
 <!-- FOOTER -->
 
 <footer>
-
   <div class="container">
 
     <div class="footer-grid">
@@ -1265,14 +1178,6 @@
       © 2026 Houston Toner Supply. All rights reserved.
     </div>
 
-    <p
-      class="copyright"
-      style="border:0;margin-top:8px;padding-top:0;font-size:11px"
-    >
-      Downtown Houston skyline photo via Wikimedia Commons,
-      licensed under CC BY-SA 3.0.
-    </p>
-
   </div>
 </footer>
 
@@ -1301,15 +1206,12 @@
       event.preventDefault();
 
       const data = new FormData(event.currentTarget);
-
       const lines = [];
 
       for(const [name,value] of data.entries()){
-
         if(String(value).trim()){
           lines.push(name + ': ' + value);
         }
-
       }
 
       const message =
