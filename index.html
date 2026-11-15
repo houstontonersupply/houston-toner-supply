@@ -8,85 +8,90 @@
   <title>Houston Toner Supply | Toner, Drum & Ink Supplies</title>
 
   <style>
-    :root{
-      --navy:#081a32;
-      --blue:#087bdc;
-      --ink:#203047;
-      --muted:#617187;
-      --line:#e2eaf2;
-      --paper:#f6f9fc;
+    :root {
+      --navy: #081a32;
+      --blue: #087bdc;
+      --ink: #203047;
+      --muted: #617187;
+      --line: #e2eaf2;
+      --paper: #f6f9fc;
+      --green: #20b968;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-
-    html{
-      scroll-behavior:smooth;
-      scroll-padding-top:90px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    body{
-      font-family:Arial,Helvetica,sans-serif;
-      color:var(--ink);
-      background:#fff;
-      line-height:1.65;
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
-    a{color:inherit}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.65;
+    }
 
-    .container{
-      width:min(1160px,90%);
-      margin-inline:auto;
+    a { color: inherit; }
+
+    .container {
+      width: min(1160px, 90%);
+      margin-inline: auto;
     }
 
     /* HEADER */
 
-    header{
-      position:sticky;
-      top:0;
-      z-index:20;
-      background:rgba(8,26,50,.98);
-      box-shadow:0 5px 24px rgba(5,24,48,.16);
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(8,26,50,.98);
+      box-shadow: 0 5px 24px rgba(5,24,48,.16);
     }
 
-    .header-inner{
-      min-height:82px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:24px;
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
 
-    .brand-logo img{
-      display:block;
-      width:190px;
-      max-width:42vw;
-      height:auto;
+    .brand-logo img {
+      display: block;
+      width: 190px;
+      max-width: 42vw;
+      height: auto;
     }
 
-    nav{
-      display:flex;
-      align-items:center;
-      justify-content:flex-end;
-      gap:22px;
-      flex-wrap:wrap;
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
-    nav a{
-      color:#fff;
-      text-decoration:none;
-      font-size:14px;
-      font-weight:700;
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
     }
 
-    nav a:hover{color:#70c3ff}
+    nav a:hover { color: #70c3ff; }
 
     /* HERO */
 
-    .hero{
-      min-height:570px;
-      display:flex;
-      align-items:center;
-      color:#fff;
+    .hero {
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      color: #fff;
       background:
         linear-gradient(
           90deg,
@@ -98,534 +103,564 @@
         center/cover no-repeat;
     }
 
-    .hero-content{
-      padding:85px 0;
-      max-width:760px;
+    .hero-content {
+      padding: 85px 0;
+      max-width: 760px;
     }
 
-    .eyebrow{
-      display:inline-block;
-      padding:7px 14px;
-      border:1px solid rgba(112,195,255,.6);
-      border-radius:30px;
-      background:rgba(69,168,255,.15);
-      color:#a8d9ff;
-      font-size:13px;
-      font-weight:800;
-      letter-spacing:.08em;
-      margin-bottom:20px;
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid rgba(112,195,255,.6);
+      border-radius: 30px;
+      background: rgba(69,168,255,.15);
+      color: #a8d9ff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      margin-bottom: 20px;
     }
 
-    h1{
-      font-size:clamp(38px,6vw,62px);
-      line-height:1.08;
-      letter-spacing:-1.5px;
-      margin-bottom:22px;
+    h1 {
+      font-size: clamp(38px,6vw,62px);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      margin-bottom: 22px;
     }
 
-    h1 span{color:#61baff}
+    h1 span { color: #61baff; }
 
-    .hero p{
-      max-width:650px;
-      color:#e5edf7;
-      font-size:19px;
-      margin-bottom:30px;
+    .hero p {
+      max-width: 650px;
+      color: #e5edf7;
+      font-size: 19px;
+      margin-bottom: 30px;
     }
 
-    .actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:13px 21px;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:800;
-      border:2px solid transparent;
-      transition:.2s;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 21px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 2px solid transparent;
+      transition: .2s;
+      cursor: pointer;
     }
 
-    .btn-primary{
-      background:var(--blue);
-      color:#fff;
+    .btn-primary {
+      background: var(--blue);
+      color: #fff;
     }
 
-    .btn-primary:hover{
-      background:#0665b5;
-      transform:translateY(-2px);
+    .btn-primary:hover {
+      background: #0665b5;
+      transform: translateY(-2px);
     }
 
-    .btn-outline{
-      border-color:#fff;
-      color:#fff;
+    .btn-outline {
+      border-color: #fff;
+      color: #fff;
     }
 
-    .btn-outline:hover{
-      background:#fff;
-      color:var(--navy);
+    .btn-outline:hover {
+      background: #fff;
+      color: var(--navy);
+    }
+
+    .btn-email {
+      background: var(--blue);
+      color: #fff;
+      border: 2px solid var(--blue);
+    }
+
+    .btn-email:hover {
+      background: #0665b5;
+      transform: translateY(-2px);
     }
 
     /* GENERAL SECTIONS */
 
-    section{padding:76px 0}
+    section { padding: 76px 0; }
 
-    .section-heading{
-      text-align:center;
-      max-width:760px;
-      margin:0 auto 38px;
+    .section-heading {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 38px;
     }
 
-    .section-heading h2{
-      font-size:clamp(28px,4vw,38px);
-      line-height:1.2;
-      color:var(--navy);
-      letter-spacing:-.6px;
-      margin-bottom:12px;
+    .section-heading h2 {
+      font-size: clamp(28px,4vw,38px);
+      line-height: 1.2;
+      color: var(--navy);
+      letter-spacing: -.6px;
+      margin-bottom: 12px;
     }
 
-    .section-heading p{
-      font-size:17px;
-      color:var(--muted);
+    .section-heading p {
+      font-size: 17px;
+      color: var(--muted);
     }
 
     /* PRODUCT CATEGORIES */
 
-    .categories{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:22px;
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 22px;
     }
 
-    .category-card{
-      overflow:hidden;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:15px;
-      box-shadow:0 12px 34px rgba(8,26,50,.08);
-      transition:transform .2s,box-shadow .2s;
+    .category-card {
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      box-shadow: 0 12px 34px rgba(8,26,50,.08);
+      transition: transform .2s,box-shadow .2s;
     }
 
-    .category-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 16px 38px rgba(8,26,50,.13);
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 38px rgba(8,26,50,.13);
     }
 
-    .category-art{
-      height:165px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      overflow:hidden;
-      background:linear-gradient(135deg,#edf7ff,#dcecff);
+    .category-art {
+      height: 165px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg,#edf7ff,#dcecff);
     }
 
     .category-art::before,
-    .category-art::after{
-      content:"";
-      position:absolute;
-      border-radius:50%;
-      background:rgba(8,123,220,.07);
+    .category-art::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(8,123,220,.07);
     }
 
-    .category-art::before{
-      width:190px;
-      height:190px;
-      right:-55px;
-      top:-85px;
+    .category-art::before {
+      width: 190px;
+      height: 190px;
+      right: -55px;
+      top: -85px;
     }
 
-    .category-art::after{
-      width:130px;
-      height:130px;
-      left:-45px;
-      bottom:-70px;
+    .category-art::after {
+      width: 130px;
+      height: 130px;
+      left: -45px;
+      bottom: -70px;
     }
 
-    .category-art img{
-      position:relative;
-      z-index:1;
-      width:100%;
-      height:100%;
-      max-width:220px;
-      object-fit:contain;
-      padding:12px;
+    .category-art img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      max-width: 220px;
+      object-fit: contain;
+      padding: 12px;
     }
 
-    .category-body{padding:22px 23px 24px}
+    .category-body { padding: 22px 23px 24px; }
 
-    .category-body h3{
-      font-size:19px;
-      line-height:1.3;
-      color:var(--navy);
-      margin-bottom:8px;
+    .category-body h3 {
+      font-size: 19px;
+      line-height: 1.3;
+      color: var(--navy);
+      margin-bottom: 8px;
     }
 
-    .category-body p{
-      font-size:14px;
-      color:var(--muted);
-      min-height:48px;
-      margin-bottom:17px;
+    .category-body p {
+      font-size: 14px;
+      color: var(--muted);
+      min-height: 48px;
+      margin-bottom: 17px;
     }
 
-    .text-link{
-      color:var(--blue);
-      font-weight:800;
-      text-decoration:none;
+    .text-link {
+      color: var(--blue);
+      font-weight: 800;
+      text-decoration: none;
     }
 
-    .text-link:hover{text-decoration:underline}
+    .text-link:hover { text-decoration: underline; }
 
-    .note{
-      margin:28px auto 0;
-      max-width:900px;
-      text-align:center;
-      color:var(--muted);
-      font-size:13px;
+    .note {
+      margin: 28px auto 0;
+      max-width: 900px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
     }
 
     /* BRAND LOGOS */
 
-    .brands{
-      background:linear-gradient(180deg,#fff,#f2f7fc);
+    .brands {
+      background: linear-gradient(180deg,#fff,#f2f7fc);
     }
 
-    .brand-list{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:20px;
-      max-width:950px;
-      margin:0 auto;
+    .brand-list {
+      display: grid;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 20px;
+      max-width: 950px;
+      margin: 0 auto;
     }
 
-    .brand-pill{
-      height:120px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:20px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:12px;
-      box-shadow:0 5px 18px rgba(11,31,58,.05);
-      transition:transform .2s,box-shadow .2s;
+    .brand-pill {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 5px 18px rgba(11,31,58,.05);
+      transition: transform .2s,box-shadow .2s;
     }
 
-    .brand-pill:hover{
-      transform:translateY(-4px);
-      box-shadow:0 12px 25px rgba(11,31,58,.10);
+    .brand-pill:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(11,31,58,.10);
     }
 
-    .brand-pill img{
-      display:block;
-      max-width:150px;
-      max-height:65px;
-      width:auto;
-      height:auto;
-      object-fit:contain;
+    .brand-pill img {
+      display: block;
+      max-width: 150px;
+      max-height: 65px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
     }
 
-    .brand-note{
-      margin:25px auto 0;
-      text-align:center;
-      color:var(--muted);
-      font-size:14px;
+    .brand-note {
+      margin: 25px auto 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     /* SERVICES */
 
-    .services{background:var(--paper)}
+    .services { background: var(--paper); }
 
-    .service-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
     }
 
-    .service{
-      padding:26px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:13px;
+    .service {
+      padding: 26px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 13px;
     }
 
-    .service-number{
-      font-size:27px;
-      color:var(--blue);
-      font-weight:900;
-      margin-bottom:8px;
+    .service-number {
+      font-size: 27px;
+      color: var(--blue);
+      font-weight: 900;
+      margin-bottom: 8px;
     }
 
-    .service h3{
-      color:var(--navy);
-      font-size:19px;
-      margin-bottom:8px;
+    .service h3 {
+      color: var(--navy);
+      font-size: 19px;
+      margin-bottom: 8px;
     }
 
-    .service p{
-      color:var(--muted);
-      font-size:14px;
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
     }
 
     /* ABOUT */
 
-    .about{
-      background:var(--navy);
-      color:#fff;
-      text-align:center;
+    .about {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
     }
 
-    .about h2{
-      font-size:clamp(28px,4vw,38px);
-      margin-bottom:14px;
+    .about h2 {
+      font-size: clamp(28px,4vw,38px);
+      margin-bottom: 14px;
     }
 
-    .about p{
-      max-width:800px;
-      margin:0 auto;
-      color:#dbe5f0;
-      font-size:17px;
+    .about p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #dbe5f0;
+      font-size: 17px;
     }
 
-    .about .btn{margin-top:25px}
+    .about .btn { margin-top: 25px; }
 
     /* QUOTE FORM */
 
-    .quote{background:#fff}
+    .quote { background: #fff; }
 
-    .quote-box{
-      max-width:780px;
-      margin:auto;
-      padding:34px;
-      background:#f7faff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      box-shadow:0 12px 34px rgba(8,26,50,.08);
+    .quote-box {
+      max-width: 780px;
+      margin: auto;
+      padding: 34px;
+      background: #f7faff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 12px 34px rgba(8,26,50,.08);
     }
 
-    form{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
 
-    input,select,textarea{
-      width:100%;
-      padding:14px;
-      border:1px solid #ccd8e5;
-      border-radius:8px;
-      background:#fff;
-      font:inherit;
-      font-size:15px;
-      color:var(--ink);
+    input,select,textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccd8e5;
+      border-radius: 8px;
+      background: #fff;
+      font: inherit;
+      font-size: 15px;
+      color: var(--ink);
     }
 
-    input:focus,select:focus,textarea:focus{
-      outline:3px solid rgba(8,123,220,.13);
-      border-color:var(--blue);
+    input:focus,select:focus,textarea:focus {
+      outline: 3px solid rgba(8,123,220,.13);
+      border-color: var(--blue);
     }
 
-    textarea{
-      min-height:130px;
-      resize:vertical;
-      grid-column:1/-1;
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+      grid-column: 1/-1;
     }
 
-    .full{grid-column:1/-1}
+    .full { grid-column: 1/-1; }
 
-    form button{
-      border:0;
-      cursor:pointer;
-      font:inherit;
-      font-weight:800;
+    form button {
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 800;
     }
 
-    .form-note{
-      font-size:13px;
-      color:var(--muted);
-      margin-top:14px;
-      text-align:center;
+    .form-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 14px;
+      text-align: center;
     }
+
+    .form-note a {
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .form-note a:hover { text-decoration: underline; }
 
     /* WHATSAPP */
 
-    .whatsapp-band{
-      padding:30px 0;
-      background:#eaf5ff;
-      text-align:center;
+    .whatsapp-band {
+      padding: 30px 0;
+      background: #eaf5ff;
+      text-align: center;
     }
 
-    .whatsapp-band p{
-      color:var(--muted);
-      margin-bottom:12px;
+    .whatsapp-band p {
+      color: var(--muted);
+      margin-bottom: 12px;
     }
 
-    .whatsapp-btn{
-      background:#20b968;
-      color:#fff;
+    .whatsapp-btn {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .whatsapp-btn:hover {
+      background: #159b53;
+      transform: translateY(-2px);
     }
 
     /* FAQ */
 
-    .faq-list{
-      max-width:900px;
-      margin:auto;
-      display:grid;
-      gap:12px;
+    .faq-list {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      gap: 12px;
     }
 
-    details{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:10px;
-      padding:18px 20px;
+    details {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 20px;
     }
 
-    summary{
-      cursor:pointer;
-      color:var(--navy);
-      font-weight:800;
+    summary {
+      cursor: pointer;
+      color: var(--navy);
+      font-weight: 800;
     }
 
-    details p{
-      color:var(--muted);
-      padding-top:12px;
+    details p {
+      color: var(--muted);
+      padding-top: 12px;
     }
 
     /* CONTACT */
 
-    .contact-strip{
-      background:#eaf5ff;
-      padding:34px 0;
+    .contact-strip {
+      background: #eaf5ff;
+      padding: 34px 0;
     }
 
-    .contact-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
-      text-align:center;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+      text-align: center;
     }
 
-    .contact-item h3{
-      color:var(--navy);
-      font-size:17px;
-      margin-bottom:5px;
+    .contact-item h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 5px;
     }
 
-    .contact-item a{
-      color:var(--blue);
-      font-weight:800;
-      text-decoration:none;
+    .contact-item a {
+      color: var(--blue);
+      font-weight: 800;
+      text-decoration: none;
     }
 
-    .contact-item p{color:var(--muted)}
+    .contact-item p { color: var(--muted); }
 
     /* FOOTER */
 
-    footer{
-      background:#071426;
-      color:#dbe5f0;
-      padding:38px 0 22px;
+    footer {
+      background: #071426;
+      color: #dbe5f0;
+      padding: 38px 0 22px;
     }
 
-    .footer-grid{
-      display:grid;
-      grid-template-columns:2fr 1fr 1fr;
-      gap:30px;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px;
     }
 
-    footer h3{
-      color:#fff;
-      margin-bottom:10px;
+    footer h3 {
+      color: #fff;
+      margin-bottom: 10px;
     }
 
-    footer p,footer li{
-      font-size:14px;
-      margin-bottom:7px;
+    footer p,footer li {
+      font-size: 14px;
+      margin-bottom: 7px;
     }
 
-    footer ul{list-style:none}
+    footer ul { list-style: none; }
 
-    footer a{
-      color:#8dccff;
-      text-decoration:none;
+    footer a {
+      color: #8dccff;
+      text-decoration: none;
     }
 
-    .copyright{
-      text-align:center;
-      border-top:1px solid #26374e;
-      margin-top:28px;
-      padding-top:18px;
-      color:#9eacbd;
-      font-size:13px;
+    footer a:hover { text-decoration: underline; }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #26374e;
+      margin-top: 28px;
+      padding-top: 18px;
+      color: #9eacbd;
+      font-size: 13px;
     }
 
     /* TABLET */
 
-    @media(max-width:900px){
-      .categories{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .service-grid{grid-template-columns:repeat(2,1fr)}
-      nav{gap:12px}
-      .header-inner{padding:12px 0}
+    @media(max-width:900px) {
+      .categories {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+
+      .service-grid { grid-template-columns: repeat(2,1fr); }
+      nav { gap: 12px; }
+      .header-inner { padding: 12px 0; }
     }
 
     /* MOBILE */
 
-    @media(max-width:650px){
-      .header-inner{
-        flex-direction:column;
-        gap:10px;
-        padding:12px 0;
+    @media(max-width:650px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 0;
       }
 
-      .brand-logo img{width:170px}
+      .brand-logo img { width: 170px; }
 
-      nav{
-        justify-content:center;
-        gap:8px 14px;
+      nav {
+        justify-content: center;
+        gap: 8px 14px;
       }
 
-      nav a{font-size:13px}
+      nav a { font-size: 13px; }
 
-      .hero{min-height:540px}
-      .hero-content{padding:65px 0}
-      .hero p{font-size:17px}
+      .hero { min-height: 540px; }
+      .hero-content { padding: 65px 0; }
+      .hero p { font-size: 17px; }
 
       .categories,
       .service-grid,
       .contact-grid,
-      .footer-grid{
-        grid-template-columns:1fr;
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
 
-      .brand-list{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-        gap:12px;
+      .brand-list {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 12px;
       }
 
-      .brand-pill{
-        height:100px;
-        padding:12px;
+      .brand-pill {
+        height: 100px;
+        padding: 12px;
       }
 
-      .brand-pill img{
-        max-width:125px;
-        max-height:55px;
+      .brand-pill img {
+        max-width: 125px;
+        max-height: 55px;
       }
 
-      section{padding:56px 0}
-      .category-art{height:150px}
-      .quote-box{padding:22px 16px}
+      section { padding: 56px 0; }
+      .category-art { height: 150px; }
+      .quote-box { padding: 22px 16px; }
 
-      form{grid-template-columns:1fr}
-      form>*{grid-column:1/-1}
+      form { grid-template-columns: 1fr; }
+      form > * { grid-column: 1/-1; }
 
-      .actions .btn{width:100%}
+      .actions .btn { width: 100%; }
     }
   </style>
 </head>
@@ -648,6 +683,7 @@
       <a href="#faq">FAQs</a>
       <a href="#quote">Get a Quote</a>
       <a href="#contact">Contact</a>
+      <a href="mailto:houstontonersupply@gmail.com">Email Us</a>
     </nav>
 
   </div>
@@ -677,6 +713,7 @@
         <a class="btn btn-primary" href="#products">Explore Categories</a>
         <a class="btn btn-outline" href="#quote">Request a Quote</a>
         <a class="btn btn-outline" href="tel:+13462873776">Call 346-287-3776</a>
+        <a class="btn btn-outline" href="mailto:houstontonersupply@gmail.com">Email Us</a>
       </div>
 
     </div>
@@ -821,7 +858,7 @@
     </div>
   </section>
 
-  <!-- BRANDS WITH ALL EIGHT LOGOS -->
+  <!-- BRANDS -->
 
   <section id="brands" class="brands">
     <div class="container">
@@ -1031,16 +1068,22 @@
           ></textarea>
 
           <button class="btn btn-primary full" type="submit">
-            Continue to WhatsApp to Send Request
+            Send Quote Request via WhatsApp
+          </button>
+
+          <button
+            class="btn btn-email full"
+            type="button"
+            onclick="sendQuoteByEmail()">
+            Send Quote Request via Email
           </button>
 
         </form>
 
         <p class="form-note">
-          Your details will be placed in a WhatsApp message to
-          Houston Toner Supply. Review the message and tap
-          <strong>Send</strong> in WhatsApp to submit your request.
-          You can also email
+          Choose WhatsApp or Email to submit your quote request.
+          Review your message and press Send in the selected app.
+          You can also contact us directly at
           <a href="mailto:houstontonersupply@gmail.com">
             houstontonersupply@gmail.com
           </a>.
@@ -1061,8 +1104,7 @@
         class="btn whatsapp-btn"
         href="https://wa.me/13462873776?text=Hello%20Houston%20Toner%20Supply%2C%20I%20would%20like%20to%20request%20a%20quote."
         target="_blank"
-        rel="noopener noreferrer"
-      >
+        rel="noopener noreferrer">
         Chat With Us on WhatsApp
       </a>
 
@@ -1088,7 +1130,7 @@
 
         <details>
           <summary>How do I get a price quote?</summary>
-          <p>Use the Request a Quote form, call us, or message us on WhatsApp. Include the printer model or cartridge number and quantity if available.</p>
+          <p>Use the Request a Quote form, email us, call us, or message us on WhatsApp. Include the printer model or cartridge number and quantity if available.</p>
         </details>
 
         <details>
@@ -1160,6 +1202,7 @@
         <h3>Quick Links</h3>
         <ul>
           <li><a href="#products">Categories</a></li>
+          <li><a href="#brands">Brands</a></li>
           <li><a href="#services">How It Works</a></li>
           <li><a href="#quote">Request a Quote</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -1167,9 +1210,23 @@
       </div>
 
       <div>
-        <h3>Contact</h3>
-        <p><a href="tel:+13462873776">346-287-3776</a></p>
-        <p><a href="mailto:houstontonersupply@gmail.com">Email Us</a></p>
+        <h3>Contact Us</h3>
+        <p>
+          <a href="tel:+13462873776">346-287-3776</a>
+        </p>
+        <p>
+          <a href="mailto:houstontonersupply@gmail.com">
+            houstontonersupply@gmail.com
+          </a>
+        </p>
+        <p>
+          <a
+            href="https://wa.me/13462873776"
+            target="_blank"
+            rel="noopener noreferrer">
+            WhatsApp Us
+          </a>
+        </p>
       </div>
 
     </div>
@@ -1185,48 +1242,99 @@
 
 <script>
 
-  function chooseCategory(category){
+  // Automatically select product category
+
+  function chooseCategory(category) {
 
     const field = document.getElementById('quoteCategory');
 
-    if(field){
+    if (field) {
       field.value = category;
     }
 
     document.getElementById('quote').scrollIntoView({
-      behavior:'smooth'
+      behavior: 'smooth'
     });
 
   }
 
+
+  // Collect and validate quote form details
+
+  function getQuoteMessage() {
+
+    const form = document.getElementById('quoteForm');
+
+    if (!form.reportValidity()) {
+      return null;
+    }
+
+    const data = new FormData(form);
+    const lines = [];
+
+    for (const [name, value] of data.entries()) {
+
+      if (String(value).trim()) {
+        lines.push(name + ': ' + value);
+      }
+
+    }
+
+    return 'Hello Houston Toner Supply, I would like to request a quote.\n\n'
+      + lines.join('\n')
+      + '\n\nThank you.';
+
+  }
+
+
+  // Send quote request through WhatsApp
+
   document.getElementById('quoteForm').addEventListener(
     'submit',
-    function(event){
+    function(event) {
 
       event.preventDefault();
 
-      const data = new FormData(event.currentTarget);
-      const lines = [];
+      const message = getQuoteMessage();
 
-      for(const [name,value] of data.entries()){
-        if(String(value).trim()){
-          lines.push(name + ': ' + value);
-        }
+      if (!message) {
+        return;
       }
 
-      const message =
-        'Hello Houston Toner Supply, I would like to request a quote.\n\n'
-        + lines.join('\n')
-        + '\n\nThank you.';
-
-      const url =
-        'https://wa.me/13462873776?text='
+      const url = 'https://wa.me/13462873776?text='
         + encodeURIComponent(message);
 
-      window.open(url,'_blank','noopener,noreferrer');
+      window.open(url, '_blank');
 
     }
   );
+
+
+  // Send quote request through Email
+
+  function sendQuoteByEmail() {
+
+    const message = getQuoteMessage();
+
+    if (!message) {
+      return;
+    }
+
+    const subject = encodeURIComponent(
+      'New Quote Request - Houston Toner Supply'
+    );
+
+    const body = encodeURIComponent(message);
+
+    const emailLink =
+      'mailto:houstontonersupply@gmail.com?subject='
+      + subject
+      + '&body='
+      + body;
+
+    window.location.href = emailLink;
+
+  }
 
 </script>
 
